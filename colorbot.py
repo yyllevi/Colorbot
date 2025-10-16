@@ -30,7 +30,7 @@ def main():
 {red}|   --| . | | . |  _| . | . |  _|  |     | . | -_|_'_|  |  |__| -_| . | -_|   | . |_ -|
 {purple2}|_____|___|_|___|_| |___|___|_|    |__|__|  _|___|_,_|  |_____|___|_  |___|_|_|___|___|
                                          |_|                      |___|                 
-   By {gray}#LEVI""")
+   By {gray}LEVI && LONELY""")
  print(f"\n{gray}AIMBOT IS ON ={dark_red} AIM BUTTON {gray} *LT or {red}RT\033[0m ")
  with mss() as ss:
      while True:
