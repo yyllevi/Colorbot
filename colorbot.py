@@ -48,7 +48,7 @@ def main():
              continue
     
          centroid_x = xs.mean()
-         centroid_y = ys.min() 
+         centroid_y = ys.mean() - 5
     
          pygame.event.pump()
          if AXIS.get_axis(4) > 0.0:
@@ -61,7 +61,7 @@ def main():
              target_y = int(top + centroid_y)
     
              dx = target_x - grab_x
-             dy = target_y - grab_y - 8
+             dy = target_y - grab_y 
     
              # cap large jumps to prevent erratic motion
              dx = max(min(dx, 45), -45)
