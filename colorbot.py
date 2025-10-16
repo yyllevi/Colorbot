@@ -61,7 +61,7 @@ def main():
              target_y = int(top + centroid_y)
     
              dx = target_x - grab_x
-             dy = target_y - grab_y - 3
+             dy = target_y - grab_y - 1
     
              # cap large jumps to prevent erratic motion
              dx = max(min(dx, 45), -45)
