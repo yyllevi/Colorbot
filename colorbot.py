@@ -48,7 +48,7 @@ def main():
              continue
     
          centroid_x = xs.mean() 
-         centroid_y = ys.min() + 66
+         centroid_y = ys.min() + 15
     
          pygame.event.pump()
          if AXIS.get_axis(4) > 0.0:
@@ -64,8 +64,8 @@ def main():
              dy = target_y - grab_y 
     
              # cap large jumps to prevent erratic motion
-             dx = max(min(dx, 90), -90)
-             dy = max(min(dy, 90), -90) 
+             dx = max(min(dx, 50), -50)
+             dy = max(min(dy, 50), -50) 
     
              ctypes.windll.user32.mouse_event(0x0001, dx, dy)
     
