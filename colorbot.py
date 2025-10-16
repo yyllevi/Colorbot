@@ -31,8 +31,8 @@ def main():
   ╚██╔╝  ██║   ██║██║   ██║    ██╔══██║██╔══██╗██╔══╝      ██║╚██╗██║██║   ██║██║███╗██║    ██╔═██╗ ██║██║╚██╗██║██║   ██║
    ██║   ╚██████╔╝╚██████╔╝    ██║  ██║██║  ██║███████╗    ██║ ╚████║╚██████╔╝╚███╔███╔╝    ██║  ██╗██║██║ ╚████║╚██████╔╝
    ╚═╝    ╚═════╝  ╚═════╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝    ╚═╝  ╚═══╝ ╚═════╝  ╚══╝╚══╝     ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝                                                                                                                             
-   By {gray}LEVI && LONELY""")
- print(f"\n{gray}AIMBOT IS ON ={dark_red} AIM BUTTON {gray} *LT or {red}RT\033[0m ")
+   {gray}By LEVI && LONELY""")
+ print(f"UNBANNLE!, also activate is on LT or RT, AIM BUTTON")
  with mss() as ss:
      while True:
          screen = {"left": left, "top": top, "width": width, "height": height}
