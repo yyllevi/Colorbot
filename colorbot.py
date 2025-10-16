@@ -24,9 +24,8 @@ dark_red = "\033[0;31m"
 
 def main():
  os.system("cls")
- print(f"""                                                                                                                                                                                                                                           
-   {gray}By LEVI && LONELY""")
- print(f"UNBANNLE!, also activate is on LT or RT, AIM BUTTON")
+ print(f"""{gray}By LEVI && LONELY""")
+ print("\033[0mUNBANNLE!, also activate is on LT or RT, AIM BUTTON")
  with mss() as ss:
      while True:
          screen = {"left": left, "top": top, "width": width, "height": height}
