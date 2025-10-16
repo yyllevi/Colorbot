@@ -48,7 +48,7 @@ def main():
              continue
     
          centroid_x = xs.mean()
-         centroid_y = ys.mean() - 1
+         centroid_y = ys.mean() 
     
          pygame.event.pump()
          if AXIS.get_axis(4) > 0.0:
