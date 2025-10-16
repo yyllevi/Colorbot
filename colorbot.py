@@ -32,7 +32,7 @@ def main():
    ██║   ╚██████╔╝╚██████╔╝    ██║  ██║██║  ██║███████╗    ██║ ╚████║╚██████╔╝╚███╔███╔╝    ██║  ██╗██║██║ ╚████║╚██████╔╝
    ╚═╝    ╚═════╝  ╚═════╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝    ╚═╝  ╚═══╝ ╚═════╝  ╚══╝╚══╝     ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝                                                                                                                             
    {gray}By LEVI && LONELY""")
- print(f"UNBANNLE!, also activate is on LT or RT, AIM BUTTON")
+ print(f"UNBANNLE!, also activate is on LT or RT, AIM BUTTON ->>>>>")
  with mss() as ss:
      while True:
          screen = {"left": left, "top": top, "width": width, "height": height}
