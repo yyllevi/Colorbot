@@ -64,8 +64,8 @@ def main():
              dy = target_y - grab_y 
     
              # cap large jumps to prevent erratic motion
-             dx = max(min(dx, 45), -45)
-             dy = max(min(dy, 45), -45) 
+             dx = max(min(dx, 50), -50)
+             dy = max(min(dy, 50), -50) 
     
              ctypes.windll.user32.mouse_event(0x0001, dx, dy)
     
