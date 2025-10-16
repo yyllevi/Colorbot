@@ -1,4 +1,4 @@
-import mss
+from mss import mss
 import numpy as np
 import ctypes
 import pygame
@@ -33,7 +33,7 @@ def main():
    ╚═╝    ╚═════╝  ╚═════╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝    ╚═╝  ╚═══╝ ╚═════╝  ╚══╝╚══╝     ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝                                                                                                                             
    {gray}By LEVI && LONELY""")
  print(f"UNBANNLE!, also activate is on LT or RT, AIM BUTTON")
- with mss.mss() as ss:
+ with mss() as ss:
      while True:
          screen = {"left": left, "top": top, "width": width, "height": height}
          screenshot = np.array(ss.grab(screen))
