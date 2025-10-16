@@ -1,4 +1,4 @@
-from mss import mss
+from mss import mss # by levi && lonely
 import numpy as np
 import ctypes
 import pygame
@@ -32,7 +32,6 @@ def main():
          screen = {"left": left, "top": top, "width": width, "height": height}
          screenshot = np.array(ss.grab(screen))
     
-         # vectorized purple detection instead of pixel-by-pixel loops
          r, g, b = screenshot[:, :, 2], screenshot[:, :, 1], screenshot[:, :, 0]
          mask = (r >= 202) & (g <= 109 ) & (b >= 193)
          ys, xs = np.where(mask)
@@ -46,7 +45,6 @@ def main():
     
          pygame.event.pump()
          if AXIS.get_axis(4) > 0.0:
-             # get current position (using ctypes instead of pyautogui for speed)
              pt = ctypes.wintypes.POINT()
              ctypes.windll.user32.GetCursorPos(ctypes.byref(pt))
              grab_x, grab_y = pt.x, pt.y
@@ -56,8 +54,7 @@ def main():
     
              dx = target_x - grab_x 
              dy = target_y - grab_y 
-    
-             # cap large jumps to prevent erratic motion
+
              dx = max(min(dx, 50), -50)
              dy = max(min(dy, 50), -50) 
     
