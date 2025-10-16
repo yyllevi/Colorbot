@@ -25,7 +25,7 @@ dark_red = "\033[0;31m"
 def main():
  os.system("cls")
  print(f"""{gray}By LEVI && LONELY""")
- print(f"\033[0mactivate colorbot is on LT or RT, AIM BUTTON, UPDATE {gray}#4.2")
+ print(f"\033[0mactivate colorbot is on LT or RT, AIM BUTTON, UPDATE {gray}#4.3")
 
  with mss() as ss:
      while True:
@@ -41,7 +41,7 @@ def main():
              continue
     
          centroid_x = xs.mean() 
-         centroid_y = ys.min() + 17
+         centroid_y = ys.min() + 18
     
          pygame.event.pump()
          if AXIS.get_axis(4) > 0.0:
