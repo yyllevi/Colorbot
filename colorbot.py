@@ -7,7 +7,7 @@ import time
 
 os.system('cls')
 
-left, top = 916, 496
+left, top = 916, 360
 width, height = 300, 300
 
 pygame.init()
@@ -31,7 +31,7 @@ def main():
   ╚██╔╝  ██║   ██║██║   ██║    ██╔══██║██╔══██╗██╔══╝      ██║╚██╗██║██║   ██║██║███╗██║    ██╔═██╗ ██║██║╚██╗██║██║   ██║
    ██║   ╚██████╔╝╚██████╔╝    ██║  ██║██║  ██║███████╗    ██║ ╚████║╚██████╔╝╚███╔███╔╝    ██║  ██╗██║██║ ╚████║╚██████╔╝
    ╚═╝    ╚═════╝  ╚═════╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝    ╚═╝  ╚═══╝ ╚═════╝  ╚══╝╚══╝     ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝                                                                                                                             
-   {gray}By LEVI && LONELY && SQU IS A NIGGER""")
+   {gray}By LEVI && LONELY""")
  print(f"UNBANNLE!, also activate is on LT or RT, AIM BUTTON")
  with mss() as ss:
      while True:
@@ -47,8 +47,8 @@ def main():
              time.sleep(0.001)
              continue
     
-         centroid_x = xs.mean()
-         centroid_y = ys.mean() 
+         centroid_x = xs.mean() 
+         centroid_y = ys.min() + 66
     
          pygame.event.pump()
          if AXIS.get_axis(4) > 0.0:
@@ -60,12 +60,12 @@ def main():
              target_x = int(left + centroid_x)
              target_y = int(top + centroid_y)
     
-             dx = target_x - grab_x
+             dx = target_x - grab_x 
              dy = target_y - grab_y 
     
              # cap large jumps to prevent erratic motion
-             dx = max(min(dx, 50), -50)
-             dy = max(min(dy, 50), -50) 
+             dx = max(min(dx, 90), -90)
+             dy = max(min(dy, 90), -90) 
     
              ctypes.windll.user32.mouse_event(0x0001, dx, dy)
     
