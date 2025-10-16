@@ -1,0 +1,74 @@
+from mss import mss
+import numpy as np
+import ctypes
+import pygame
+import os
+import time
+
+os.system('cls')
+
+left, top = 916, 496
+width, height = 300, 300
+
+pygame.init()
+pygame.joystick.init()
+AXIS = pygame.joystick.Joystick(0)
+AXIS.init()
+
+"""colors"""
+red = "\033[1;31m"
+purple2 = "\033[0;35m"
+gray = "\033[1;30m"
+dark_red = "\033[0;31m"
+"""colors"""
+
+def main():
+ os.system("cls")
+ print(f"""                                                                                                                   
+{red} _____     _         _       _      _____                __                      _     
+{purple2}|     |___| |___ ___| |_ ___| |_   |  _  |___ ___ _ _   |  |   ___ ___ ___ ___ _| |___ 
+{red}|   --| . | | . |  _| . | . |  _|  |     | . | -_|_'_|  |  |__| -_| . | -_|   | . |_ -|
+{purple2}|_____|___|_|___|_| |___|___|_|    |__|__|  _|___|_,_|  |_____|___|_  |___|_|_|___|___|
+                                         |_|                      |___|                 
+   By {gray}#LEVI""")
+ print(f"\n{gray}AIMBOT IS ON ={dark_red} AIM BUTTON {gray} *LT or {red}RT\033[0m ")
+ with mss() as ss:
+     while True:
+         screen = {"left": left, "top": top, "width": width, "height": height}
+         screenshot = np.array(ss.grab(screen))
+    
+         # vectorized purple detection instead of pixel-by-pixel loops
+         r, g, b = screenshot[:, :, 2], screenshot[:, :, 1], screenshot[:, :, 0]
+         mask = (r >= 202) & (g <= 109 ) & (b >= 193)
+         ys, xs = np.where(mask)
+    
+         if len(xs) == 0:
+             time.sleep(0.001)
+             continue
+    
+         centroid_x = xs.mean()
+         centroid_y = ys.min() 
+    
+         pygame.event.pump()
+         if AXIS.get_axis(4) > 0.0:
+             # get current position (using ctypes instead of pyautogui for speed)
+             pt = ctypes.wintypes.POINT()
+             ctypes.windll.user32.GetCursorPos(ctypes.byref(pt))
+             grab_x, grab_y = pt.x, pt.y
+    
+             target_x = int(left + centroid_x)
+             target_y = int(top + centroid_y)
+    
+             dx = target_x - grab_x
+             dy = target_y - grab_y - 5
+    
+             # cap large jumps to prevent erratic motion
+             dx = max(min(dx, 45), -45)
+             dy = max(min(dy, 45), -45) 
+    
+             ctypes.windll.user32.mouse_event(0x0001, dx, dy)
+    
+         time.sleep(0.001)
+
+if __name__ == "__main__":
+    main()
