@@ -7,7 +7,7 @@ import time
 
 os.system('cls')
 
-left, top = 916, 496
+left, top = 916, 400
 width, height = 300, 300
 
 pygame.init()
@@ -25,7 +25,8 @@ dark_red = "\033[0;31m"
 def main():
  os.system("cls")
  print(f"""{gray}By LEVI && LONELY""")
- print("\033[0mactivate colorbot is on LT or RT, AIM BUTTON")
+ print(f"\033[0mactivate colorbot is on LT or RT, AIM BUTTON, UPDATE {gray}#1.0")
+
  with mss() as ss:
      while True:
          screen = {"left": left, "top": top, "width": width, "height": height}
@@ -64,5 +65,4 @@ def main():
     
          time.sleep(0.001)
 
-if __name__ == "__main__":
-    main()
+main()
