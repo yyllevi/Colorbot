@@ -32,7 +32,7 @@ def main():
 ██║  ██╗██║██║ ╚████║███████║██║  ██║██║
 ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝""")
  print(f"""{gray}By LEVI && LONELY""")
- print(f"\033[0mcolorbot is AIM BUTTON, {red}--update-version={gray}#4.4")
+ print(f"\033[0mcolorbot is AIM BUTTON, {red}--update-version={gray} 4.4")
 
  with mss() as ss:
      while True:
