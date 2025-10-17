@@ -8,7 +8,7 @@ import time
 os.system('cls')
 
 left, top = 800, 300
-width, height = 300, 300
+width, height = 100, 100
 
 pygame.init()
 pygame.joystick.init()
