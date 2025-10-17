@@ -7,7 +7,7 @@ import time
 
 os.system('cls')
 
-left, top = 916, 400
+left, top = 800, 300
 width, height = 300, 300
 
 pygame.init()
@@ -24,15 +24,8 @@ dark_red = "\033[0;31m"
 
 def main():
  os.system("cls")
- print(f"""
-██╗  ██╗██╗███╗   ██╗███████╗██╗  ██╗██╗
-██║ ██╔╝██║████╗  ██║██╔════╝██║  ██║██║
-█████╔╝ ██║██╔██╗ ██║███████╗███████║██║
-██╔═██╗ ██║██║╚██╗██║╚════██║██╔══██║██║
-██║  ██╗██║██║ ╚████║███████║██║  ██║██║
-╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝""")
  print(f"""{gray}By LEVI && LONELY""")
- print(f"\033[0mcolorbot is AIM BUTTON, {red}--update-version={gray} 4.4")
+ print(f"\033[0mactivate colorbot is on LT or RT, AIM BUTTON, UPDATE {gray}#4.4")
 
  with mss() as ss:
      while True:
@@ -48,7 +41,7 @@ def main():
              continue
     
          centroid_x = xs.mean() 
-         centroid_y = ys.min() + 18
+         centroid_y = ys.mean() 
     
          pygame.event.pump()
          if AXIS.get_axis(4) > 0.0:
@@ -60,10 +53,10 @@ def main():
              target_y = int(top + centroid_y)
     
              dx = target_x - grab_x 
-             dy = target_y - grab_y 
+             dy = target_y - grab_y - 18
 
-             dx = max(min(dx, 50), -50)
-             dy = max(min(dy, 50), -50) 
+             dx = max(min(dx, 100), -100)
+             dy = max(min(dy, 100), -100) 
     
              ctypes.windll.user32.mouse_event(0x0001, dx, dy)
     
