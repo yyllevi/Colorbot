@@ -7,7 +7,7 @@ import time
 
 os.system('cls')
 
-left, top = 916, 496
+left, top = 800, 300
 width, height = 300, 300
 
 pygame.init()
@@ -24,6 +24,14 @@ dark_red = "\033[0;31m"
 
 def main():
  os.system("cls")
+ print(f"""
+{gray}██╗  ██╗██╗███╗   ██╗███████╗██╗  ██╗██╗
+{gray}██║ ██╔╝██║████╗  ██║██╔════╝██║  ██║██║
+{gray}█████╔╝ ██║██╔██╗ ██║███████╗███████║██║
+{gray}██╔═██╗ ██║██║╚██╗██║╚════██║██╔══██║██║
+{gray}██║  ██╗██║██║ ╚████║███████║██║  ██║██║
+{gray}╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝                                       
+ """)
  print(f"""{gray}By LEVI && LONELY""")
  print(f"\033[0mactivate colorbot is on LT or RT, AIM BUTTON, UPDATE {gray}#4.6")
 
@@ -53,10 +61,10 @@ def main():
              target_y = int(top + centroid_y)
     
              dx = target_x - grab_x 
-             dy = target_y - grab_y 
+             dy = target_y - grab_y + 10
 
-             dx = max(min(dx, 60), -60)
-             dy = max(min(dy, 60), -60) 
+             dx = max(min(dx, 80), -80)
+             dy = max(min(dy, 80), -80) 
     
              ctypes.windll.user32.mouse_event(0x0001, dx, dy)
     
