@@ -33,7 +33,7 @@ def main():
 {gray}╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝                                       
  """)
  print(f"""{gray}By LEVI && LONELY""")
- print(f"\033[0mactivate colorbot is on LT or RT, AIM BUTTON, UPDATE {gray}#4.9")
+ print(f"\033[0mactivate colorbot is on LT or RT, AIM BUTTON, UPDATE {gray}#5.0")
 
  with mss() as ss:
      while True:
@@ -61,7 +61,7 @@ def main():
              target_y = int(top + centroid_y)
     
              dx = target_x - grab_x 
-             dy = target_y - grab_y -10
+             dy = target_y - grab_y -18
 
              dx = max(min(dx, 60), -60)
              dy = max(min(dy, 60), -60) 
