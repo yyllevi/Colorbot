@@ -33,7 +33,7 @@ def main():
 {gray}╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝                                       
  """)
  print(f"""{gray}By LEVI && LONELY""")
- print(f"\033[0mactivate colorbot is on LT or RT, AIM BUTTON, UPDATE {gray}#4.7")
+ print(f"\033[0mactivate colorbot is on LT or RT, AIM BUTTON, UPDATE {gray}#4.8")
 
  with mss() as ss:
      while True:
