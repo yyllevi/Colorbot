@@ -7,7 +7,7 @@ import time
 
 os.system('cls')
 
-left, top = 916, 450
+left, top = 916, 400
 width, height = 300, 300
 
 pygame.init()
