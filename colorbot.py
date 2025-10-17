@@ -8,7 +8,7 @@ import time
 os.system('cls')
 
 left, top = 800, 300
-width, height = 100, 100
+width, height = 300, 300
 
 pygame.init()
 pygame.joystick.init()
@@ -63,8 +63,8 @@ def main():
              dx = target_x - grab_x 
              dy = target_y - grab_y + 10
 
-             dx = max(min(dx, 80), -80)
-             dy = max(min(dy, 80), -80) 
+             dx = max(min(dx, 60), -60)
+             dy = max(min(dy, 60), -60) 
     
              ctypes.windll.user32.mouse_event(0x0001, dx, dy)
     
