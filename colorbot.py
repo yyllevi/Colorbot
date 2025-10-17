@@ -24,8 +24,15 @@ dark_red = "\033[0;31m"
 
 def main():
  os.system("cls")
+ print(f"""
+██╗  ██╗██╗███╗   ██╗███████╗██╗  ██╗██╗
+██║ ██╔╝██║████╗  ██║██╔════╝██║  ██║██║
+█████╔╝ ██║██╔██╗ ██║███████╗███████║██║
+██╔═██╗ ██║██║╚██╗██║╚════██║██╔══██║██║
+██║  ██╗██║██║ ╚████║███████║██║  ██║██║
+╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝""")
  print(f"""{gray}By LEVI && LONELY""")
- print(f"\033[0mactivate colorbot is on LT or RT, AIM BUTTON, UPDATE {gray}#4.4")
+ print(f"\033[0mcolorbot is AIM BUTTON, {red}--update-version={gray}#4.4")
 
  with mss() as ss:
      while True:
