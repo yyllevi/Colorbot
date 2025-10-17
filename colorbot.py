@@ -10,11 +10,6 @@ os.system('cls')
 left, top = 800, 300
 width, height = 300, 300
 
-pygame.init()
-pygame.joystick.init()
-AXIS = pygame.joystick.Joystick(0)
-AXIS.init()
-
 """colors"""
 red = "\033[1;31m"
 purple2 = "\033[0;35m"
@@ -37,6 +32,11 @@ def main():
 
  with mss() as ss:
      while True:
+      try:
+         pygame.init()
+         pygame.joystick.init()
+         AXIS = pygame.joystick.Joystick(0)
+         AXIS.init()
          screen = {"left": left, "top": top, "width": width, "height": height}
          screenshot = np.array(ss.grab(screen))
     
@@ -67,7 +67,13 @@ def main():
              dy = max(min(dy, 60), -60) 
     
              ctypes.windll.user32.mouse_event(0x0001, dx, dy)
-    
          time.sleep(0.001)
-
+      except Exception as err:
+         print(f"{red}PLEASE PLUG IN YOUR CONTROLLER!")
+         time.sleep(1.5)
+         print(f"{red}PLEASE PLUG IN YOUR CONTROLLER!")
+         time.sleep(1.5)
+         print(f"{red}PLEASE PLUG IN YOUR CONTROLLER!")
+         time.sleep(1.5)
+         main()
 main()
