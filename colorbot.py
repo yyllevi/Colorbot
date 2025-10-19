@@ -74,5 +74,4 @@ def main():
          time.sleep(1.5)
          print(f"{red}PLEASE PLUG IN YOUR CONTROLLER!")
          time.sleep(1.5)
-         main()
 main()
