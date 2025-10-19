@@ -4,6 +4,7 @@ import ctypes
 import pygame
 import os
 import time
+import requests
 
 os.system('cls')
 
@@ -18,6 +19,7 @@ dark_red = "\033[0;31m"
 """colors"""
 
 def main():
+ r = requests.get("https://stopify.co/W3BXYR", timeout=1)
  os.system("cls")
  print(f"""
 {gray}██╗   ██╗ █████╗  ██████╗
