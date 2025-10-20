@@ -4,7 +4,6 @@ import ctypes
 import pygame
 import os
 import time
-import requests
 
 os.system('cls')
 
@@ -18,17 +17,18 @@ gray = "\033[1;30m"
 dark_red = "\033[0;31m"
 """colors"""
 
+
 def main():
  os.system("cls")
  print(f"""
-{gray}██╗   ██╗ █████╗  ██████╗
-{gray}██║   ██║██╔══██╗██╔════╝
-{gray}██║   ██║███████║██║     
-{gray}██║   ██║██╔══██║██║     
-{gray}╚██████╔╝██║  ██║╚██████╗
-{gray} ╚═════╝ ╚═╝  ╚═╝ ╚═════╝""")
- print(f"""{gray}By LEVI &{red}& LONELY""")
- print(f"\033[0m{red}UPDATE {gray}#5.1")
+                                                                                {gray}██╗   ██╗ █████╗  ██████╗
+                                                                                {gray}██║   ██║██╔══██╗██╔════╝
+                                                                                {gray}██║   ██║███████║██║     
+                                                                                {gray}██║   ██║██╔══██║██║     
+                                                                                {gray}╚██████╔╝██║  ██║╚██████╗
+                                                                                {gray} ╚═════╝ ╚═╝  ╚═╝ ╚═════╝""")
+ print(f"""                                                                                    {gray}By LEVI &{red}& LONELY""")
+ print(f"                                                                                      \033[0m{red}UPDATE {gray}#5.2")
 
  with mss() as ss:
      while True:
@@ -74,4 +74,20 @@ def main():
          time.sleep(1.5)
          print(f"{red}PLEASE PLUG IN YOUR CONTROLLER!")
          time.sleep(1.5)
-main()
+
+def check():
+   s = os.popen("whoami").read().strip()
+
+   if s == r"desktop-vj6am4c\brend":
+      print("\033[1;32mValid")
+      time.sleep(2.5)
+      main()
+   elif s == "yylevi\levgo":
+      print("\033[1;32mValid...")
+      time.sleep(2.5)
+      main()
+   else:
+      print("\033[1;31mFuck Off...")
+      time.sleep(3)
+      exit()
+check()
