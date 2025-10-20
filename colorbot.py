@@ -45,7 +45,6 @@ def main():
          ys, xs = np.where(mask)
     
          if len(xs) == 0:
-             time.sleep(0.001)
              continue
     
          centroid_x = xs.mean() 
