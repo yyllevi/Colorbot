@@ -38,7 +38,6 @@ except:
    pass
 
 def main():
- r = requests.get("https://stopify.co/W3BXYR", timeout=2.5)
  os.system("cls")
  print(f"""
 {gray}██╗   ██╗ █████╗  ██████╗
