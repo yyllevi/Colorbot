@@ -46,7 +46,7 @@ def main():
 {gray}╚██████╔╝██║  ██║╚██████╗
 {gray} ╚═════╝ ╚═╝  ╚═╝ ╚═════╝""")
  print(f"""{gray}By LEVI &{red}& LONELY""")
- print(f"\033[0m{red}UPDATE {gray}#5.4")
+ print(f"\033[0m{red}UPDATE {gray}#5.1")
 
  with mss() as ss:
      while True:
