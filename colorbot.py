@@ -21,14 +21,14 @@ dark_red = "\033[0;31m"
 def main():
  os.system("cls")
  print(f"""
-                                                                                {gray}██╗   ██╗ █████╗  ██████╗
-                                                                                {gray}██║   ██║██╔══██╗██╔════╝
-                                                                                {gray}██║   ██║███████║██║     
-                                                                                {gray}██║   ██║██╔══██║██║     
-                                                                                {gray}╚██████╔╝██║  ██║╚██████╗
-                                                                                {gray} ╚═════╝ ╚═╝  ╚═╝ ╚═════╝""")
- print(f"""                                                                                    {gray}By LEVI &{red}& LONELY""")
- print(f"                                                                                      \033[0m{red}UPDATE {gray}#5.2")
+{gray}██╗   ██╗ █████╗  ██████╗
+{gray}██║   ██║██╔══██╗██╔════╝
+{gray}██║   ██║███████║██║     
+{gray}██║   ██║██╔══██║██║     
+{gray}╚██████╔╝██║  ██║╚██████╗
+{gray} ╚═════╝ ╚═╝  ╚═╝ ╚═════╝""")
+ print(f"""{gray}By LEVI &{red}& LONELY""")
+ print(f"\033[0m{red}UPDATE {gray}#5.2")
 
  with mss() as ss:
      while True:
