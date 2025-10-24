@@ -48,8 +48,8 @@ def main():
 
     
          if len(xs) == 0:
-             time.sleep(0.002)
              continue
+         time.sleep(0.0009)
          centroid_x = left + xs.mean() 
          centroid_y = top + ys.mean()
          pygame.event.pump()
@@ -70,7 +70,7 @@ def main():
              dy = max(min(dy, 70), -70) 
     
              ctypes.windll.user32.mouse_event(0x0001, dx, dy)
-          time.sleep(0.002)
+
       except Exception as err:
          print(f"{red}PLEASE PLUG IN YOUR CONTROLLER!")
          time.sleep(1.5)
