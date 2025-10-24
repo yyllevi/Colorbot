@@ -19,7 +19,6 @@ dark_red = "\033[0;31m"
 """colors"""
 
 
-
 def main():
  os.system("cls")
  print(f"""
@@ -30,7 +29,7 @@ def main():
 {gray}╚██████╔╝██║  ██║╚██████╗
 {gray} ╚═════╝ ╚═╝  ╚═╝ ╚═════╝""")
  print(f"""{gray}By LEVI &{red}& LONELY""")
- print(f"\033[0m{red}UPDATE {gray}#5.7")
+ print(f"\033[0m{red}UPDATE {gray}#5.8")
 
  with mss() as ss:
      while True:
@@ -43,13 +42,13 @@ def main():
          screenshot = np.array(ss.grab(screen))
     
          r, g, b = screenshot[:, :, 2], screenshot[:, :, 1], screenshot[:, :, 0]
-         mask = (r >= 202) & (g <= 109 ) & (b >= 193)
+         mask = (r >= 41) & (g <= 90 ) & (b >= 217)
          ys, xs = np.where(mask)
 
     
          if len(xs) == 0:
              continue
-         time.sleep(0.0009)
+    
          centroid_x = left + xs.mean() 
          centroid_y = top + ys.mean()
          pygame.event.pump()
