@@ -29,7 +29,7 @@ def main():
 {gray}╚██████╔╝██║  ██║╚██████╗
 {gray} ╚═════╝ ╚═╝  ╚═╝ ╚═════╝""")
  print(f"""{gray}By LEVI &{red}& LONELY""")
- print(f"\033[0m{red}UPDATE {gray}#6.4")
+ print(f"\033[0m{red}UPDATE {gray}#6.5")
 
  with mss() as ss:
      while True:
@@ -65,8 +65,8 @@ def main():
              dx = target_x - grab_x 
              dy = target_y - grab_y -18
 
-             dx = max(min(dx, 70), -70)
-             dy = max(min(dy, 70), -70) 
+             dx = max(min(dx, 80), -80)
+             dy = max(min(dy, 80), -80) 
     
              ctypes.windll.user32.mouse_event(0x0001, dx, dy)
 
