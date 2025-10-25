@@ -47,7 +47,6 @@ def main():
 
     
          if len(xs) == 0:
-             time.sleep(0.008)
              continue
     
          centroid_x = left + xs.mean() 
