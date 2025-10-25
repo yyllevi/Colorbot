@@ -29,7 +29,7 @@ def main():
 {gray}╚██████╔╝██║  ██║╚██████╗
 {gray} ╚═════╝ ╚═╝  ╚═╝ ╚═════╝""")
  print(f"""{gray}By LEVI &{red}& LONELY""")
- print(f"\033[0m{red}UPDATE {gray}#6.0")
+ print(f"\033[0m{red}UPDATE {gray}#6.1")
 
  with mss() as ss:
      while True:
@@ -42,11 +42,12 @@ def main():
          screenshot = np.array(ss.grab(screen))
     
          r, g, b = screenshot[:, :, 2], screenshot[:, :, 1], screenshot[:, :, 0]
-         mask = (r >= 203) & (g <= 20 ) & (b >= 14)
+         mask = (r >= 198) & (g <= 20 ) & (b >= 15)
          ys, xs = np.where(mask)
 
     
          if len(xs) == 0:
+             time.sleep(0.002)
              continue
     
          centroid_x = left + xs.mean() 
