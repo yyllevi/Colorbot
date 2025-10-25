@@ -29,7 +29,7 @@ def main():
 {gray}╚██████╔╝██║  ██║╚██████╗
 {gray} ╚═════╝ ╚═╝  ╚═╝ ╚═════╝""")
  print(f"""{gray}By LEVI &{red}& LONELY""")
- print(f"\033[0m{red}UPDATE {gray}#6.3")
+ print(f"\033[0m{red}UPDATE {gray}#6.4")
 
  with mss() as ss:
      while True:
@@ -42,7 +42,7 @@ def main():
          screenshot = np.array(ss.grab(screen))
     
          r, g, b = screenshot[:, :, 2], screenshot[:, :, 1], screenshot[:, :, 0]
-         mask = (r >= 214) & (g <= 14 ) & (b >= 11)
+         mask = (r >= 162) & (g <= 13 ) & (b >= 11)
          ys, xs = np.where(mask)
 
     
