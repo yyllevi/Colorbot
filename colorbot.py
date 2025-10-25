@@ -29,7 +29,7 @@ def main():
 {gray}╚██████╔╝██║  ██║╚██████╗
 {gray} ╚═════╝ ╚═╝  ╚═╝ ╚═════╝""")
  print(f"""{gray}By LEVI &{red}& LONELY""")
- print(f"\033[0m{red}UPDATE {gray}#6.1")
+ print(f"\033[0m{red}UPDATE {gray}#6.2")
 
  with mss() as ss:
      while True:
@@ -47,7 +47,6 @@ def main():
 
     
          if len(xs) == 0:
-             time.sleep(0.002)
              continue
     
          centroid_x = left + xs.mean() 
