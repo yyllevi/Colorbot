@@ -99,7 +99,7 @@ def main():
          screenshot = np.array(ss.grab(screen))
     
          r, g, b = screenshot[:, :, 2], screenshot[:, :, 1], screenshot[:, :, 0]
-         mask = (r >= 155) & (g <= 30) & (b >= 25)
+         mask = (r >= 202) & (g <= 109) & (b >= 192)
          ys, xs = np.where(mask)
 
     
