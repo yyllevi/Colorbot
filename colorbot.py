@@ -197,11 +197,11 @@ def main():
 
 def check():
  print("\n**Date 0.1**\n")
- print("recon = y")
- print("Purple = n")
+ print("120 FOV & Recon = y")
+ print("120 FOV & Purple = n")
  print("FOV 104 & PURPLE = 104")
 
- option = input("Y/n: ")
+ option = input("\nY/n: ")
  if option == "y":
   recon()
  elif option == "104":
