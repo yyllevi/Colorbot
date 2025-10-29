@@ -257,7 +257,7 @@ def main():
 def check():
  
  c = os.popen("whoami").read().strip()
- if c == "desktop-rk6gamc\fmrla":
+ if c == r"desktop-rk6gamc\fmrla":
     print("Hello Seraph!")
     pass
  elif c == "yylevi\levgo":
