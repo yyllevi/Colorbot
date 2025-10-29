@@ -212,7 +212,7 @@ def check():
        exit()
        
  print("\n**Date 0.1**\n")
- print("120 FOV & Recon = 1")
+ print("Must Be On Roblox Graphics, 120 FOV & Recon = 1")
  print("120 FOV & Purple = 2")
  print("\n104 FOV & Purple = 3")
 
