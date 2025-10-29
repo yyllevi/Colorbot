@@ -196,15 +196,31 @@ def main():
 
 
 def check():
+ 
+ c = os.popen("whoami").read().strip()
+ if c == "desktop-rk6gamc\fmrla":
+    print("Hello Seraph!")
+ elif c == "yylevi\levgo":
+    print("Hello Levi!")
+ elif c == r"desktop-vj6am4c\brend":
+    print("Hello Asia!")
+
+ else:
+    try:
+     exit()
+    except:
+       exit()
+       
  print("\n**Date 0.1**\n")
- print("120 FOV & Recon = y")
- print("120 FOV & Purple = n")
- print("FOV 104 & PURPLE = 104")
+ print("120 FOV & Recon = 1")
+ print("120 FOV & Purple = 2")
+ print("\n104 FOV & Purple = 3")
 
  option = input("\nY/n: ")
- if option == "y":
+ 
+ if option == "1":
   recon()
- elif option == "104":
+ elif option == "3":
     fov()
  else:
     main()
