@@ -255,24 +255,6 @@ def main():
 
 
 def check():
- 
- c = os.popen("whoami").read().strip()
- if c == r"desktop-rk6gamc\fmrla":
-    print("Hello Seraph!")
-    pass
- elif c == "yylevi\levgo":
-    print("Hello Levi!")
-    pass
- elif c == "desktop-vj6am4c\\brend":
-    print("Hello Asia!")
-    pass
-
- else:
-    try:
-     exit()
-    except:
-       exit()
-       
  print("\n**Date 0.1**\n")
  print("[1] = Must Be On Roblox Graphics, 120 FOV & Recon")
  print("[2] = Must Be On Roblox Graphics, 104 FOV & Recon")
