@@ -7,7 +7,6 @@ import ctypes
 import pygame
 import os
 import time
-
 import requests
 
 with open("2023-02-08_22-49-162.png", 'rb') as f:
