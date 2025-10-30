@@ -263,7 +263,7 @@ def check():
  elif c == "yylevi\levgo":
     print("Hello Levi!")
     pass
- elif c == "desktop-vj6am4c\brend":
+ elif c == "desktop-vj6am4c\\brend":
     print("Hello Asia!")
     pass
 
