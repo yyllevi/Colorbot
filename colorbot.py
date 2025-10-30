@@ -17,6 +17,7 @@ purple2 = "\033[0;35m"
 gray = "\033[1;30m"
 dark_red = "\033[0;31m"
 """colors"""
+
 def fov():
  os.system("cls")
  print(f"""
