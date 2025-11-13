@@ -1,2 +1,2 @@
-print("something crazy coming coon!")
+print("unfinished project")
 input("")
