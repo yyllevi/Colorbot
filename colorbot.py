@@ -1,2 +1,2 @@
-print("ai Aimbot Coming soon!")
+print("something crazy coming coon!")
 input("")
