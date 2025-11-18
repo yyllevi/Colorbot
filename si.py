@@ -4,13 +4,13 @@ import numpy as np
 import ctypes
 import torch
 import pygame
-
 pygame.init()
 axis = pygame.joystick.Joystick(0)
 pygame.joystick.init()
 axis.init()
 
 def banner():
+    os.system("cls")
     print("""
 \033[1;35m   _____ _ _                  __         
   / ___/(_|_)   ______ _ ____/ /__ _   __
