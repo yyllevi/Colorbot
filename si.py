@@ -3,38 +3,48 @@ import bettercam
 import numpy as np
 import ctypes
 import torch
-
-DEVICE = "cuda"  
-if DEVICE == "cuda":
+def banner():
+    print("""
+\033[1;35m   _____ _ _                  __         
+  / ___/(_|_)   ______ _ ____/ /__ _   __
+  \__ \/ / / | / / __ `// __  / _ \ | / /
+ ___/ / / /| |/ / /_/ // /_/ /  __/ |/ / 
+/____/_/_/ |___/\__,_(_)__,_/\___/|___/  v1
+ 
+ By Limegreen0012""")
+banner()
+try:
+ DEVICE = "cuda"  
+ if DEVICE == "cuda":
     torch.backends.cudnn.benchmark = True
 
-mouse_event = ctypes.windll.user32.mouse_event
+ mouse_event = ctypes.windll.user32.mouse_event
 
-FULL_CENTER_X = 960
-FULL_CENTER_Y = 540
+ FULL_CENTER_X = 960
+ FULL_CENTER_Y = 540
 
-CAPTURE_SIZE = 320  
+ CAPTURE_SIZE = 320  
 
-REL_CENTER_X = CAPTURE_SIZE // 2
-REL_CENTER_Y = CAPTURE_SIZE // 2
+ REL_CENTER_X = CAPTURE_SIZE // 2
+ REL_CENTER_Y = CAPTURE_SIZE // 2
 
-REGION = (
+ REGION = (
     FULL_CENTER_X - REL_CENTER_X,  
     FULL_CENTER_Y - REL_CENTER_Y, 
     FULL_CENTER_X + REL_CENTER_X,  
     FULL_CENTER_Y + REL_CENTER_Y,  
 )
 
-CAMERA = bettercam.create(
+ CAMERA = bettercam.create(
     output_idx=0,
     output_color="BGR",
     region=REGION
 )
 
-if CAMERA is None:
+ if CAMERA is None:
     raise RuntimeError(f"BetterCam failed to initialize. REGION={REGION}")
 
-class PersonDetector:
+ class PersonDetector:
     def __init__(self, model_path):
         self.model = YOLO(model_path)
         self.model.to(DEVICE) 
@@ -58,14 +68,14 @@ class PersonDetector:
 
         return results[0].boxes.xyxy 
 
-def grab():
+ def grab():
     frame = CAMERA.grab()
     if frame is None:
         return np.array([])
     return frame  
 
-def main():
-    detector = PersonDetector("best.pt")
+ def main():
+    detector = PersonDetector(r"C:\Program Files\siv\best.pt")
 
     VERTICAL_AIM_FACTOR = 0.25  
 
@@ -93,6 +103,6 @@ def main():
 
         mouse_event(0x0001, dx, dy)
 
-
-if __name__ == "__main__":
-    main()
+except Exception as file_err:
+    print("Error Please Reinstall from the install.exe or Plug in controller")
+main()
