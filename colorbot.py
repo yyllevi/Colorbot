@@ -5,7 +5,6 @@ import ctypes
 import torch
 
 DEVICE = "cuda"  
-print(f"[INFO] Using device: {DEVICE}")
 if DEVICE == "cuda":
     torch.backends.cudnn.benchmark = True
 
@@ -37,7 +36,6 @@ if CAMERA is None:
 
 class PersonDetector:
     def __init__(self, model_path):
-        print(f"[INFO] Loading PyTorch model: {model_path}")
         self.model = YOLO(model_path)
         self.model.to(DEVICE) 
 
