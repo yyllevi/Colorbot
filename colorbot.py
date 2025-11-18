@@ -1,91 +1,109 @@
-from mss import mss # by levi && lonely
+from ultralytics import YOLO
+import bettercam
 import numpy as np
 import ctypes
-import pygame
-import os
-import time
-import cv2
+import torch
 
-os.system('cls')
+# ---------------- GPU Setup ----------------
+DEVICE = "cuda"  # you want GPU
+print(f"[INFO] Using device: {DEVICE}")
+if DEVICE == "cuda":
+    torch.backends.cudnn.benchmark = True
 
-left, top = 650, 250
-width, height = 380, 380
+mouse_event = ctypes.windll.user32.mouse_event
+
+# ---------------- Capture Config -------------------
+FULL_CENTER_X = 960
+FULL_CENTER_Y = 540
+
+CAPTURE_SIZE = 320  # 320x320 FOV
+
+REL_CENTER_X = CAPTURE_SIZE // 2
+REL_CENTER_Y = CAPTURE_SIZE // 2
+
+REGION = (
+    FULL_CENTER_X - REL_CENTER_X,  # left
+    FULL_CENTER_Y - REL_CENTER_Y,  # top
+    FULL_CENTER_X + REL_CENTER_X,  # right
+    FULL_CENTER_Y + REL_CENTER_Y,  # bottom
+)
+
+CAMERA = bettercam.create(
+    output_idx=0,
+    output_color="BGR",
+    region=REGION
+)
+
+if CAMERA is None:
+    raise RuntimeError(f"BetterCam failed to initialize. REGION={REGION}")
 
 
-"""colors"""
-h = "\033[38;5;93m"
-purple = "\033[1;35m"
-red = "\033[1;31m"
-purple2 = "\033[0;35m"
-gray = "\033[1;30m"
-dark_red = "\033[0;31m"
-"""colors"""
+# ---------------- YOLO Loader -------------------
+class PersonDetector:
+    def __init__(self, model_path):
+        print(f"[INFO] Loading PyTorch model: {model_path}")
+        self.model = YOLO(model_path)
+        self.model.to(DEVICE)  # GPU
+
+    @torch.inference_mode()
+    def detect_person(self, img):
+        img = np.ascontiguousarray(img)
+
+        results = self.model(
+            img,
+            classes=[0],           # person
+            conf=0.5,              # tweak if needed for dummy
+            imgsz=CAPTURE_SIZE,    # roughly match FOV
+            device=DEVICE,
+            half=True,             # FP16
+            verbose=False
+        )
+
+        if not results or not len(results[0].boxes):
+            return []
+
+        return results[0].boxes.xyxy  # tensor (N, 4)
 
 
+# ---------------- Capture -------------------
+def grab():
+    frame = CAMERA.grab()
+    if frame is None:
+        return np.array([])
+    return frame  # already BGR from bettercam
+
+
+# ---------------- Main Loop -----------------------
 def main():
- with mss() as ss:
-     while True:
-      try:
-         pygame.init()
-         pygame.joystick.init()
-         AXIS = pygame.joystick.Joystick(0)
-         AXIS.init()
-         screen = {"left": left, "top": top, "width": width, "height": height}
-         screenshot = np.array(ss.grab(screen))
-    
-         hsv = cv2.cvtColor(screenshot, cv2.COLOR_BGR2HSV)
+    detector = PersonDetector("siva.pt")
+
+    VERTICAL_AIM_FACTOR = 0.25  # 0 = feet, 1 = head-ish
+
+    while True:
+        img = grab()
+        if img.size == 0:
+            continue
+
+        boxes = detector.detect_person(img)
+        if len(boxes) == 0:
+            continue
+
+        if torch.is_tensor(boxes):
+            boxes = boxes.cpu().numpy()
+
+        # -------- FIRST BOX ONLY --------
+        x1, y1, x2, y2 = boxes[0]
+
+        cx = (x1 + x2) / 2
+        h = y2 - y1
+        cy = y1 + h * VERTICAL_AIM_FACTOR
+
+        dx = int(cx - REL_CENTER_X)
+        dy = int(cy - REL_CENTER_Y)
+
+        # raw hard lock (no smoothing, no closest checks)
+        mouse_event(0x0001, dx, dy)
 
 
-         lower = np.array([27, 180, 180])
-         upper = np.array([30, 255, 255])
-         
-         mask = cv2.inRange(hsv, lower, upper)
-
-         ys, xs = np.where(mask)
-
-         if len(xs) == 0:
-             continue
-    
-         centroid_x = left + xs.mean() 
-         centroid_y = top + ys.mean()
-         pygame.event.pump()
-
-         
-         if AXIS.get_axis(4) > 0.0:
-             pt = ctypes.wintypes.POINT()
-             ctypes.windll.user32.GetCursorPos(ctypes.byref(pt))
-             grab_x, grab_y = pt.x, pt.y
-    
-             target_x = int(centroid_x)
-             target_y = int(centroid_y)
-    
-             dx = target_x - grab_x 
-             dy = target_y - grab_y -13
-
-             dx = max(min(dx, 80), -80)
-             dy = max(min(dy, 80), -80) 
-             
-             ctypes.windll.user32.mouse_event(0x0001, int(dx), int(dy))
-
-      except Exception as err:
-         print(f"{red}PLEASE PLUG IN YOUR CONTROLLER!")
-         time.sleep(1.5)
-         print(f"{red}PLEASE PLUG IN YOUR CONTROLLER!")
-         time.sleep(1.5)
-         print(f"{red}PLEASE PLUG IN YOUR CONTROLLER!")
-         time.sleep(1.5)
-
-def banner():
- os.system("cls")
- print(f"""                   
-{h}         _ _            
-   _____(_|_)   ______ _
-  / ___/ / / | / / __ `/
- (__  ) / /| |/ / /_/ / 
-/____/_/_/ |___/\__,_/                         
-""")
- print(f"""{purple2}By LEVI &{h}& LONELY""")
- print(f"\033[0m\033[38;5;165m--UPDATE-\033[0mv\033[38;5;165m1")
- main()
-banner()
-
+if __name__ == "__main__":
+    main()
