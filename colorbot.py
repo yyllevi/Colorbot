@@ -46,7 +46,7 @@ class PersonDetector:
         results = self.model(
             img,
             classes=[0],           
-            conf=0.5,              
+            conf=0.49,              
             imgsz=CAPTURE_SIZE,    
             device=DEVICE,
             half=True,            
@@ -65,7 +65,7 @@ def grab():
     return frame  
 
 def main():
-    detector = PersonDetector("siva.pt")
+    detector = PersonDetector("best.pt")
 
     VERTICAL_AIM_FACTOR = 0.25  
 
