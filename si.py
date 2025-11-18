@@ -3,6 +3,13 @@ import bettercam
 import numpy as np
 import ctypes
 import torch
+import pygame
+
+pygame.init()
+axis = pygame.joystick.Joystick(0)
+pygame.joystick.init()
+axis.init()
+
 def banner():
     print("""
 \033[1;35m   _____ _ _                  __         
@@ -99,9 +106,9 @@ try:
 
         dx = int(cx - REL_CENTER_X)
         dy = int(cy - REL_CENTER_Y)
-
-
-        mouse_event(0x0001, dx, dy)
+        pygame.event.pump()
+        if axis.get_axis(4) > 0.0:
+         mouse_event(0x0001, dx, dy)
 
 except Exception as file_err:
     print("Error Please Reinstall from the install.exe or Plug in controller")
