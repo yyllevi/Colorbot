@@ -63,7 +63,7 @@ def main():
              target_y = int(centroid_y)
     
              dx = target_x - grab_x 
-             dy = target_y - grab_y -14
+             dy = target_y - grab_y -18
 
              dx = max(min(dx, 80), -80)
              dy = max(min(dy, 80), -80) 
