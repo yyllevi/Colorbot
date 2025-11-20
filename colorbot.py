@@ -65,15 +65,6 @@ def main():
 
                 # ---------- NO COLOR: jitter ----------
                 if len(xs) == 0:
-                    move_left = -25 
-                    move_right = -25 
-                    move_down = 25
-                    move_up = 25
-
-                    ctypes.windll.user32.mouse_event(moves_mouse,move_up,move_right) 
-                    time.sleep(0.0025)
-                    ctypes.windll.user32.mouse_event(moves_mouse,move_left,move_down)
-                    time.sleep(0.0025)
                     continue
 
                 # ---------- COLOR FOUND: lock on ----------
