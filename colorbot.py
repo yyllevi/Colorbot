@@ -71,9 +71,9 @@ def main():
                     move_up = 25
 
                     ctypes.windll.user32.mouse_event(moves_mouse,move_up,move_right) 
-                    time.sleep(0.0034)
+                    time.sleep(0.0088)
                     ctypes.windll.user32.mouse_event(moves_mouse,move_left,move_down)
-                    time.sleep(0.0034)
+                    time.sleep(0.0088)
                     continue
 
                 # ---------- COLOR FOUND: lock on ----------
