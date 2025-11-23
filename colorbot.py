@@ -29,7 +29,7 @@ def main():
 {gray}███████║██║{red} ╚████╔╝ ██║  ██║
 {gray}╚══════╝╚═╝{red}  ╚═══╝  ╚═╝  ╚═╝""")
  print(f"""{gray}By LEVI &{red}& LONELY""")
- print(f"\033[0m{red}UPDATE {gray}#Setup 1. Deuteranopia 2. 0% Brightness 3. mouse sens 0.20 .4 ads sense 10.0")
+ print(f"\033[0m{red}Setup {gray}1. Deuteranopia 2. 0% Brightness 3. mouse sens 0.20 .4 ads sense 10.0")
 
  with mss() as ss:
      while True:
