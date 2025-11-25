@@ -84,6 +84,7 @@ def main():
 
 def start():
  os.system("cls")
+ print("must be on 1.8ads & 0.20 sens")
  print(f"""\033[1;35m                                                              
    _____ _            
   / ___/(_)   ______ _
@@ -91,7 +92,7 @@ def start():
  ___/ / /| |/ / /_/ / 
 /____/_/ |___/\__,_/                  
 
-\033[0mBy limegreen0012""")
+\033[0mBy biskitdev""")
 start()
 pygame.init(
 )
