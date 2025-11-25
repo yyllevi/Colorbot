@@ -32,6 +32,7 @@ def main():
 {gray}╚══════╝╚═╝{red}  ╚═══╝  ╚═╝  ╚═╝""")
  print(f"""{gray}By LEVI &{red}& LONELY""")
  print(f"\033[0m{red}Setup {gray}1. Deuteranopia 2. 0% Brightness 3. mouse sens 0.20 .4 ads sense 10.0 .5 MUST BE ON 1920x1080")
+ print("fixing locking onto random objects soon and allowing long distance https://discord.gg/bAuhuJdu")
 
  with mss() as ss:
      while True:
