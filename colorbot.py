@@ -19,6 +19,8 @@ dark_red = "\033[0;31m"
 """colors"""
 
 
+
+
 def main():
  os.system("cls")
  print(f"""
@@ -78,7 +80,56 @@ def main():
          print(f"{red}PLEASE PLUG IN YOUR CONTROLLER!")
          time.sleep(1.5)
 
-main()
+
+
+def start():
+ os.system("cls")
+ print(f"""\033[1;35m                                                              
+   _____ _            
+  / ___/(_)   ______ _
+  \__ \/ / | / / __ `/
+ ___/ / /| |/ / /_/ / 
+/____/_/ |___/\__,_/                  
+
+\033[0mBy limegreen0012""")
+start()
+pygame.init(
+)
+
+move_left = -25
+move_right = -25
+move_down = 25
+move_up = 25
+
+moves_mouse = 0x0001
+
+def need_to_move_mouse_and_also_asias_a_bitch():
+  ctypes.windll.user32.mouse_event(moves_mouse,move_up,move_right)
+  time.sleep(0.0038)
+  ctypes.windll.user32.mouse_event(moves_mouse,move_left,move_down)
+  while True:
+   try:
+    pygame.event.pump()
+    bound = pygame.joystick.Joystick(0)
+    aim_button = bound.get_axis(4)
+    if aim_button > 0.0:
+     need_to_move_mouse_and_also_asias_a_bitch(
+ )
+    time.sleep(0.0034)
+   except Exception as err:
+    print("\033[1;31mPLUG IN CONTROLLER")
+    time.sleep(1.3)
+
+def main_input():
+   print("[1] Ai Assist")
+   print("[2] Jitter")
+   i = input(">> ")
+   if i == "1":
+      main()
+   else:
+      start()
+main_input()
+
 
 
 
