@@ -5,11 +5,8 @@ import ctypes
 import torch
 import pygame
 import os
+
 os.system("cls")
-pygame.init()
-axis = pygame.joystick.Joystick(0)
-pygame.joystick.init()
-axis.init()
 
 def banner():
     print("""
@@ -105,6 +102,10 @@ try:
 
         dx = int(cx - REL_CENTER_X)
         dy = int(cy - REL_CENTER_Y)
+        pygame.init()
+        axis = pygame.joystick.Joystick(0)
+        pygame.joystick.init()
+        axis.init()
         pygame.event.pump()
         if axis.get_axis(4) > 0.0:
          mouse_event(0x0001, dx, dy)
