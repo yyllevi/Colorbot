@@ -10,11 +10,15 @@ os.system("cls")
 
 def banner():
     print("""
-\033[1;35m   _____ _ _                  __         
-  / ___/(_|_)   ______ _ ____/ /__ _   __
-  \__ \/ / / | / / __ `// __  / _ \ | / /
- ___/ / / /| |/ / /_/ // /_/ /  __/ |/ / 
-/____/_/_/ |___/\__,_(_)__,_/\___/|___/  v1""")
+\033[1;35m                   
+ _____ _ _         
+|   __|_|_|_ _ ___ 
+|__   | | | | | .'|
+|_____|_|_|\_/|__,| v1
+          
+\033[1;35mINFO\033[0m [\033[0;34mLoaded\033[0m]
+\033[1;35mINFO\033[0m [\033[0;34mAi Aimbot is on LT or RT\033[0m]
+FAQ \033[0m[\033[0;34mWhy Use Cli, Less Cpu Usage\033[0m]""")
 banner()
 try:
  DEVICE = "cuda"  
@@ -26,7 +30,7 @@ try:
  FULL_CENTER_X = 960
  FULL_CENTER_Y = 540
 
- CAPTURE_SIZE = 288
+ CAPTURE_SIZE = 320
 
  REL_CENTER_X = CAPTURE_SIZE // 2
  REL_CENTER_Y = CAPTURE_SIZE // 2
@@ -59,10 +63,9 @@ try:
         results = self.model(
             img,
             classes=[0],           
-            conf=0.49,              
+            conf=0.48,             
             imgsz=CAPTURE_SIZE,    
-            device=DEVICE,
-            half=True,            
+            device=DEVICE,           
             verbose=False
         )
 
@@ -78,7 +81,7 @@ try:
     return frame  
 
  def main():
-    detector = PersonDetector(r"C:\Program Files\siv\best.pt")
+    detector = PersonDetector(r"C:\Users\levgo\runs\detect\train47\weights\best.pt")
 
     VERTICAL_AIM_FACTOR = 0.25  
 
