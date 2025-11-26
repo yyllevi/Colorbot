@@ -14,7 +14,7 @@ def banner():
  _____ _ _         
 |   __|_|_|_ _ ___ 
 |__   | | | | | .'|
-|_____|_|_|\_/|__,| v1
+|_____|_|_|\_/|__,| v2
           
 \033[1;35mINFO\033[0m [\033[0;34mLoaded\033[0m]
 \033[1;35mINFO\033[0m [\033[0;34mAi Aimbot is on LT or RT\033[0m]
@@ -30,7 +30,7 @@ try:
  FULL_CENTER_X = 960
  FULL_CENTER_Y = 540
 
- CAPTURE_SIZE = 320
+ CAPTURE_SIZE = 640
 
  REL_CENTER_X = CAPTURE_SIZE // 2
  REL_CENTER_Y = CAPTURE_SIZE // 2
@@ -63,7 +63,7 @@ try:
         results = self.model(
             img,
             classes=[0],           
-            conf=0.48,             
+            conf=0.65,             
             imgsz=CAPTURE_SIZE,    
             device=DEVICE,           
             verbose=False
