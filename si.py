@@ -30,7 +30,7 @@ try:
  FULL_CENTER_X = 960
  FULL_CENTER_Y = 540
 
- CAPTURE_SIZE = 512
+ CAPTURE_SIZE = 320
 
  REL_CENTER_X = CAPTURE_SIZE // 2
  REL_CENTER_Y = CAPTURE_SIZE // 2
@@ -81,7 +81,7 @@ try:
     return frame  
 
  def main():
-    detector = PersonDetector(r"C:\Users\levgo\runs\detect\train47\weights\best.pt")
+    detector = PersonDetector(r"C:\\Program Files\\siv\\best.pt")
 
     VERTICAL_AIM_FACTOR = 0.25  
 
