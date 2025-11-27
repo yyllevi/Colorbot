@@ -1,137 +1,122 @@
-from mss import mss # by levi && lonely
+from ultralytics import YOLO
+import bettercam
 import numpy as np
 import ctypes
+import torch
 import pygame
 import os
 import time
 
-os.system('cls')
+os.system("cls")
 
-left, top = 800, 300
-width, height = 300, 300
+try:
+ DEVICE = "cuda"  
+ if DEVICE == "cuda":
+    torch.backends.cudnn.benchmark = True
 
+ mouse_event = ctypes.windll.user32.mouse_event
 
-"""colors"""
-red = "\033[1;31m"
-purple2 = "\033[0;35m"
-gray = "\033[1;30m"
-dark_red = "\033[0;31m"
-"""colors"""
+ FULL_CENTER_X = 960
+ FULL_CENTER_Y = 540
 
+ CAPTURE_SIZE = 224
 
+ REL_CENTER_X = CAPTURE_SIZE // 2
+ REL_CENTER_Y = CAPTURE_SIZE // 2
 
-
-def main():
- os.system("cls")
- print(f"""
-{gray}███████╗██╗{red}██╗   ██╗ █████╗ 
-{gray}██╔════╝██║{red}██║   ██║██╔══██╗
-{gray}███████╗██║{red}██║   ██║███████║
-{gray}╚════██║██║{red}╚██╗ ██╔╝██╔══██║
-{gray}███████║██║{red} ╚████╔╝ ██║  ██║
-{gray}╚══════╝╚═╝{red}  ╚═══╝  ╚═╝  ╚═╝""")
- print(f"""{gray}By LEVI &{red}& LONELY""")
- print(f"\033[0m{red}Setup {gray}1. Deuteranopia 2. 0% Brightness 3. mouse sens 0.20 .4 ads sense 10.0 .5 MUST BE ON 1920x1080")
- print("fixing locking onto random objects soon and allowing long distance https://discord.gg/bAuhuJdu")
-
- with mss() as ss:
-     while True:
-      try:
-         pygame.init()
-         pygame.joystick.init()
-         AXIS = pygame.joystick.Joystick(0)
-         AXIS.init()
-         screen = {"left": left, "top": top, "width": width, "height": height}
-         screenshot = np.array(ss.grab(screen))
-    
-         r, g, b = screenshot[:, :, 2], screenshot[:, :, 1], screenshot[:, :, 0]
-         mask = (r >= 190) & (g <= 109) & (b >= 192)
-         ys, xs = np.where(mask)
-
-    
-         if len(xs) == 0:
-             continue
-    
-         centroid_x = left + xs.mean() 
-         centroid_y = top + ys.mean()
-         pygame.event.pump()
-
-         
-         if AXIS.get_axis(4) > 0.0:
-             pt = ctypes.wintypes.POINT()
-             ctypes.windll.user32.GetCursorPos(ctypes.byref(pt))
-             grab_x, grab_y = pt.x, pt.y
-    
-             target_x = int(centroid_x)
-             target_y = int(centroid_y)
-    
-             dx = target_x - grab_x 
-             dy = target_y - grab_y -18
-
-             dx = max(min(dx, 80), -80)
-             dy = max(min(dy, 80), -80) 
-    
-             ctypes.windll.user32.mouse_event(0x0001, dx, dy)
-
-      except Exception as err:
-         print(f"{red}PLEASE PLUG IN YOUR CONTROLLER!")
-         time.sleep(1.5)
-         print(f"{red}PLEASE PLUG IN YOUR CONTROLLER!")
-         time.sleep(1.5)
-         print(f"{red}PLEASE PLUG IN YOUR CONTROLLER!")
-         time.sleep(1.5)
-
-
-
-def start():
- os.system("cls")
- print("must be on 1.8ads & 0.20 sens")
- print(f"""\033[1;35m                                                              
-   _____ _            
-  / ___/(_)   ______ _
-  \__ \/ / | / / __ `/
- ___/ / /| |/ / /_/ / 
-/____/_/ |___/\__,_/                  
-
-\033[0mBy biskitdev""")
-start()
-pygame.init(
+ REGION = (
+    FULL_CENTER_X - REL_CENTER_X,  
+    FULL_CENTER_Y - REL_CENTER_Y, 
+    FULL_CENTER_X + REL_CENTER_X,  
+    FULL_CENTER_Y + REL_CENTER_Y,  
 )
 
-move_left = -25
-move_right = -25
-move_down = 25
-move_up = 25
-
-moves_mouse = 0x0001
-
-def need_to_move_mouse_and_also_asias_a_bitch():
-  ctypes.windll.user32.mouse_event(moves_mouse,move_up,move_right)
-  time.sleep(0.0038)
-  ctypes.windll.user32.mouse_event(moves_mouse,move_left,move_down)
-  while True:
-   try:
-    pygame.event.pump()
-    bound = pygame.joystick.Joystick(0)
-    aim_button = bound.get_axis(4)
-    if aim_button > 0.0:
-     need_to_move_mouse_and_also_asias_a_bitch(
- )
-    time.sleep(0.0034)
-   except Exception as err:
-    print("\033[1;31mPLUG IN CONTROLLER")
-    time.sleep(1.3)
-
-def main_input():
-   print("[1] Ai Assist")
-   print("[2] Jitter")
-   i = input(">> ")
-   if i == "1":
-      main()
-   else:
-      start()
-main_input()
+ CAMERA = bettercam.create(
+    output_idx=0,
+    output_color="BGR",
+    region=REGION
+)
 
 
+ class PersonDetector:
+    def __init__(self, model_path):
+        self.model = YOLO(model_path)
+        self.model.to(DEVICE) 
+
+    @torch.inference_mode()
+    def detect_person(self, img):
+        img = np.ascontiguousarray(img)
+
+        results = self.model(
+            img,
+            classes=[0],           
+            conf=0.5,             
+            imgsz=CAPTURE_SIZE,    
+            device=DEVICE,           
+            verbose=False,
+            half=True
+        )
+
+        if not results or not len(results[0].boxes):
+            return []
+
+        return results[0].boxes.xyxy 
+
+ def grab():
+    frame = CAMERA.grab()
+    if frame is None:
+        return np.array([])
+    return frame  
+
+ def main():
+    detector = PersonDetector(r"C:\\Program Files\\siv\\best.pt")
+
+    VERTICAL_AIM_FACTOR = 0.25  
+
+    while True:
+        img = grab()
+        if img.size == 0:
+            continue
+
+        boxes = detector.detect_person(img)
+        if len(boxes) == 0:
+            continue
+
+        if torch.is_tensor(boxes):
+            boxes = boxes.cpu().numpy()
+            
+        x1, y1, x2, y2 = boxes[0]
+
+        cx = (x1 + x2) / 2
+        h = y2 - y1
+        cy = y1 + h * VERTICAL_AIM_FACTOR
+
+        dx = int(cx - REL_CENTER_X)
+        dy = int(cy - REL_CENTER_Y)
+        pygame.init()
+        axis = pygame.joystick.Joystick(0)
+        pygame.joystick.init()
+        axis.init()
+        pygame.event.pump()
+        if axis.get_axis(4) > 0.0:
+         mouse_event(0x0001, dx, dy)
+
+except Exception as file_err:
+    print("Error Please Reinstall from the install.exe or Plug in controller")
 
 
+def banner():
+ print("""
+     \033[1;35m                   
+ _____ _ _         
+|   __|_|_|_ _ ___ 
+|__   | | | | | .'|
+|_____|_|_|\_/|__,| v9 """)
+ p = input("\n\033[0mEnter \033[1;36mPasskey\033[0m: \033[1;35m")
+ if p == "7816":
+     print("\033[0m[\033[1;34mINFO\033[0m] Loaded")
+     main()
+ else:
+    print("no nigga")
+    time.sleep(2)
+banner()
