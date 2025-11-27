@@ -14,11 +14,10 @@ def banner():
  _____ _ _         
 |   __|_|_|_ _ ___ 
 |__   | | | | | .'|
-|_____|_|_|\_/|__,| v3
-          
-\033[1;35mINFO\033[0m [\033[0;34mLoaded\033[0m]
-\033[1;35mINFO\033[0m [\033[0;34mAi Aimbot is on LT or RT\033[0m]
-FAQ \033[0m[\033[0;34mWhy Use Cli, Less Cpu Usage\033[0m]""")
+|_____|_|_|\_/|__,| v9
+\033[0m[\033[1;34mINFO\033[0m] Loaded 
+
+          """)
 banner()
 try:
  DEVICE = "cuda"  
