@@ -5,20 +5,10 @@ import ctypes
 import torch
 import pygame
 import os
+import time
 
 os.system("cls")
 
-def banner():
-    print("""
-\033[1;35m                   
- _____ _ _         
-|   __|_|_|_ _ ___ 
-|__   | | | | | .'|
-|_____|_|_|\_/|__,| v9
-\033[0m[\033[1;34mINFO\033[0m] Loaded 
-
-          """)
-banner()
 try:
  DEVICE = "cuda"  
  if DEVICE == "cuda":
@@ -29,10 +19,10 @@ try:
  FULL_CENTER_X = 960
  FULL_CENTER_Y = 540
 
- CAPTURE_SIZE = 300
+ CAPTURE_SIZE = 512
 
- REL_CENTER_X = CAPTURE_SIZE // 2
- REL_CENTER_Y = CAPTURE_SIZE // 2
+ REL_CENTER_X = CAPTURE_SIZE 
+ REL_CENTER_Y = CAPTURE_SIZE 
 
  REGION = (
     FULL_CENTER_X - REL_CENTER_X,  
@@ -47,8 +37,6 @@ try:
     region=REGION
 )
 
- if CAMERA is None:
-    raise RuntimeError(f"BetterCam failed to initialize. REGION={REGION}")
 
  class PersonDetector:
     def __init__(self, model_path):
@@ -62,10 +50,11 @@ try:
         results = self.model(
             img,
             classes=[0],           
-            conf=0.6,             
+            conf=0.8,             
             imgsz=CAPTURE_SIZE,    
             device=DEVICE,           
-            verbose=False
+            verbose=False,
+            half=True
         )
 
         if not results or not len(results[0].boxes):
@@ -114,4 +103,20 @@ try:
 
 except Exception as file_err:
     print("Error Please Reinstall from the install.exe or Plug in controller")
-main()
+
+
+def banner():
+ print("""
+     \033[1;35m                   
+ _____ _ _         
+|   __|_|_|_ _ ___ 
+|__   | | | | | .'|
+|_____|_|_|\_/|__,| v9 """)
+ p = input("\n\033[0mEnter \033[1;36mPasskey\033[0m: \033[1;35m")
+ if p == "7816":
+     print("\033[0m[\033[1;34mINFO\033[0m] Loaded")
+     main()
+ else:
+    print("no nigga")
+    time.sleep(2)
+banner()
