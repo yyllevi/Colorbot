@@ -19,10 +19,10 @@ try:
  FULL_CENTER_X = 960
  FULL_CENTER_Y = 540
 
- CAPTURE_SIZE = 416
+ CAPTURE_SIZE = 512
 
- REL_CENTER_X = CAPTURE_SIZE // 2
- REL_CENTER_Y = CAPTURE_SIZE // 2
+ REL_CENTER_X = CAPTURE_SIZE 
+ REL_CENTER_Y = CAPTURE_SIZE 
 
  REGION = (
     FULL_CENTER_X - REL_CENTER_X,  
@@ -50,7 +50,7 @@ try:
         results = self.model(
             img,
             classes=[0],           
-            conf=0.5,             
+            conf=0.8,             
             imgsz=CAPTURE_SIZE,    
             device=DEVICE,           
             verbose=False,
