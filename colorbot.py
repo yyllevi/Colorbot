@@ -50,7 +50,7 @@ try:
         results = self.model(
             img,
             classes=[0],           
-            conf=0.65,             
+            conf=0.6,             
             imgsz=CAPTURE_SIZE,    
             device=DEVICE,           
             verbose=False,
