@@ -24,10 +24,10 @@ try:
  FULL_CENTER_X = 960
  FULL_CENTER_Y = 540
 
- CAPTURE_SIZE = 224
+ CAPTURE_SIZE = 128
 
- REL_CENTER_X = CAPTURE_SIZE // 2
- REL_CENTER_Y = CAPTURE_SIZE // 2
+ REL_CENTER_X = CAPTURE_SIZE 
+ REL_CENTER_Y = CAPTURE_SIZE 
 
  REGION = (
     FULL_CENTER_X - REL_CENTER_X,  
@@ -41,7 +41,6 @@ try:
     output_color="BGR",
     region=REGION
 )
- CAMERA.start(target_fps=240, video_mode=True)
  
 
 
@@ -115,12 +114,7 @@ def banner():
  _____ _ _         
 |   __|_|_|_ _ ___ 
 |__   | | | | | .'|
-|_____|_|_|\_/|__,| v13 """)
- p = input("\n\033[0mEnter \033[1;36mPasskey\033[0m: \033[1;35m")
- if p == "7816":
-     print("\033[0m[\033[1;34mINFO\033[0m] Loaded")
-     main()
- else:
-    print("no nigga")
-    time.sleep(2)
+|_____|_|_|\_/|__,| v14 """)
+ print("\033[0m[\033[1;34mINFO\033[0m] Loaded")
+ main()
 banner()
