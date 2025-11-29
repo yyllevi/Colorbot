@@ -21,8 +21,8 @@ try:
 
  CAPTURE_SIZE = 224
 
- REL_CENTER_X = CAPTURE_SIZE 
- REL_CENTER_Y = CAPTURE_SIZE 
+ REL_CENTER_X = CAPTURE_SIZE //2
+ REL_CENTER_Y = CAPTURE_SIZE //2
 
  REGION = (
     FULL_CENTER_X - REL_CENTER_X,  
@@ -36,12 +36,14 @@ try:
     output_color="BGR",
     region=REGION
 )
+ CAMERA.start(target_fps=240, video_mode=True)
+ 
 
 
  class PersonDetector:
     def __init__(self, model_path):
         self.model = YOLO(model_path)
-        self.model.to(DEVICE) 
+
 
     @torch.inference_mode()
     def detect_person(self, img):
@@ -50,7 +52,7 @@ try:
         results = self.model(
             img,
             classes=[0],           
-            conf=0.5,             
+            conf=0.4,             
             imgsz=CAPTURE_SIZE,    
             device=DEVICE,           
             verbose=False,
