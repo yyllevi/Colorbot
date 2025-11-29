@@ -7,6 +7,11 @@ import pygame
 import os
 import time
 
+pygame.init()
+axis = pygame.joystick.Joystick(0)
+pygame.joystick.init()
+axis.init()
+
 os.system("cls")
 
 try:
@@ -21,8 +26,8 @@ try:
 
  CAPTURE_SIZE = 224
 
- REL_CENTER_X = CAPTURE_SIZE //2
- REL_CENTER_Y = CAPTURE_SIZE //2
+ REL_CENTER_X = CAPTURE_SIZE // 2
+ REL_CENTER_Y = CAPTURE_SIZE // 2
 
  REGION = (
     FULL_CENTER_X - REL_CENTER_X,  
@@ -95,10 +100,7 @@ try:
 
         dx = int(cx - REL_CENTER_X)
         dy = int(cy - REL_CENTER_Y)
-        pygame.init()
-        axis = pygame.joystick.Joystick(0)
-        pygame.joystick.init()
-        axis.init()
+    
         pygame.event.pump()
         if axis.get_axis(4) > 0.0:
          mouse_event(0x0001, dx, dy)
@@ -113,7 +115,7 @@ def banner():
  _____ _ _         
 |   __|_|_|_ _ ___ 
 |__   | | | | | .'|
-|_____|_|_|\_/|__,| v9 """)
+|_____|_|_|\_/|__,| v13 """)
  p = input("\n\033[0mEnter \033[1;36mPasskey\033[0m: \033[1;35m")
  if p == "7816":
      print("\033[0m[\033[1;34mINFO\033[0m] Loaded")
