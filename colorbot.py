@@ -76,7 +76,7 @@ try:
     return frame  
 
  def main():
-    detector = PersonDetector(r"C:\\Program Files\\v\\engine.best")
+    detector = PersonDetector(r"C:\\Program Files\\v\\best.engine")
 
     VERTICAL_AIM_FACTOR = 0.25  
 
