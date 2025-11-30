@@ -85,7 +85,7 @@ try:
     def detect_person(self, img):
         img = np.ascontiguousarray(img)
         
-        value = 0.1
+        value = 0.4
         ctk.set_default_color_theme("green")
         ctk.set_appearance_mode("dark")
 
