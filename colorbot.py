@@ -30,7 +30,7 @@ try:
  |___/\___/_/\_,_/  v14 """)
  print("\n \033[0m[\033[1;34mINFO\033[0m] Loaded")
  
- print("\n The Lower The Res The Faster But Worse Close Range Less Screen Pixels Can't See & More False Positives On A Higher Res\n")
+ print("\n The Lower The Res The Faster But Worse Close Range Less Screen Pixels Can't See\n")
  print("\033[1;36m[\033[0;36m1\033[0m] 160x160")
  print("\033[1;36m[\033[1;33m\033[0;36m2\033[0m] 256x256")
  print("\033[1;36m[\033[1;33m\033[0;36m3\033[0m] 300x300")
@@ -85,20 +85,24 @@ try:
     def detect_person(self, img):
         img = np.ascontiguousarray(img)
         
-        value = 0.4
+        value = 0.1
         ctk.set_default_color_theme("green")
         ctk.set_appearance_mode("dark")
 
         app = ctk.CTk()
-        app.geometry("500x160")
+        app.geometry("900x160")
         app.title("void")
 
-        label = ctk.CTkLabel(app, text=f"Strength & Also The Higher The More False Positives It Blocks Out {value}")
+        text = ctk.CTkLabel(app, text=f"Strength & Also The Higher The More False Positives It Blocks Out")
+        text.pack(pady=5)
+
+        label = ctk.CTkLabel(app, text=f"{value}")
+
         label.pack(pady=10)
         def callme(c):
          global value
          value = float(c)
-         label.configure(text=f"Strength & Also The Higher The More False Positives It Blocks Out {value}")
+         label.configure(text=f"{value}")
            
         slider = ctk.CTkSlider(app, from_=0.4, to=1, command=callme)
         slider.set(value)
