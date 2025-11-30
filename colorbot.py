@@ -6,6 +6,9 @@ import torch
 import pygame
 import os
 import time
+import customtkinter as ctk
+
+
 
 pygame.init()
 axis = pygame.joystick.Joystick(0)
@@ -20,11 +23,33 @@ try:
     torch.backends.cudnn.benchmark = True
 
  mouse_event = ctypes.windll.user32.mouse_event
+ 
+ print("160x160")
+ print("256x256")
+ print("300x300")
+ print("224x224")
+ print("192x192")
+ print("356x356")
+
+ res = input("Pick A Res")
+ 
+ if res == "1":
+    CAPTURE_SIZE = 160
+ if res == "2":
+    CAPTURE_SIZE = 256
+ if res == "3":
+    CAPTURE_SIZE = 300
+ if res == "4":
+    CAPTURE_SIZE = 224
+ if res == "5":
+    CAPTURE_SIZE = 192
+ if res == "3":
+    CAPTURE_SIZE = 356
+
 
  FULL_CENTER_X = 960
  FULL_CENTER_Y = 540
 
- CAPTURE_SIZE = 128
 
  REL_CENTER_X = CAPTURE_SIZE 
  REL_CENTER_Y = CAPTURE_SIZE 
@@ -52,17 +77,38 @@ try:
     @torch.inference_mode()
     def detect_person(self, img):
         img = np.ascontiguousarray(img)
+        
+        value = 0.1
+        ctk.set_default_color_theme("green")
+        ctk.set_appearance_mode("dark")
 
+        app = ctk.CTk()
+        app.geometry("900x160")
+        app.title("void")
+
+        label = ctk.CTkLabel(app, text=f"Strength & Also The Higher The More False Positives It Blocks Out {value}")
+        label.pack(pady=10)
+        def callme(c):
+         global value
+         value = float(c)
+         label.configure(text=f"Strength & Also The Higher The More False Positives It Blocks Out {value}")
+           
+        slider = ctk.CTkSlider(app, from_=0.1, to=1, command=callme)
+        slider.set(value)
+
+        slider.pack(pady=20)
+
+        app.mainloop()
+        
         results = self.model(
             img,
             classes=[0],           
-            conf=0.55,             
+            conf=value,           
             imgsz=CAPTURE_SIZE,    
             device=DEVICE,           
             verbose=False,
             half=True
         )
-
         if not results or not len(results[0].boxes):
             return []
 
@@ -75,7 +121,7 @@ try:
     return frame  
 
  def main():
-    detector = PersonDetector(r"C:\\Program Files\\v\\best.pt")
+    detector = PersonDetector(r"C:\Users\levgo\runs\detect\train52\weights\best.pt")
 
     VERTICAL_AIM_FACTOR = 0.25  
 
@@ -99,7 +145,7 @@ try:
 
         dx = int(cx - REL_CENTER_X)
         dy = int(cy - REL_CENTER_Y)
-    
+        
         pygame.event.pump()
         if axis.get_axis(4) > 0.0:
          mouse_event(0x0001, dx, dy)
@@ -114,7 +160,7 @@ def banner():
   _   __     _    __
  | | / /__  (_)__/ /
  | |/ / _ \/ / _  / 
- |___/\___/_/\_,_/  v15 """)
+ |___/\___/_/\_,_/  v14 """)
  print("\033[0m[\033[1;34mINFO\033[0m] Loaded")
  main()
 banner()
