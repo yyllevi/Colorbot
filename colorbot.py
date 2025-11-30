@@ -24,7 +24,7 @@ try:
  FULL_CENTER_X = 960
  FULL_CENTER_Y = 540
 
- CAPTURE_SIZE = 128
+ CAPTURE_SIZE = 160
 
  REL_CENTER_X = CAPTURE_SIZE 
  REL_CENTER_Y = CAPTURE_SIZE 
@@ -75,7 +75,7 @@ try:
     return frame  
 
  def main():
-    detector = PersonDetector(r"C:\\Program Files\\v\\best.engine")
+    detector = PersonDetector(r"C:\Users\levgo\runs\detect\train52\weights\best.pt")
 
     VERTICAL_AIM_FACTOR = 0.25  
 
@@ -111,10 +111,10 @@ except Exception as file_err:
 def banner():
  print("""
      \033[1;35m                   
- _____ _ _         
-|   __|_|_|_ _ ___ 
-|__   | | | | | .'|
-|_____|_|_|\_/|__,| v14 """)
+  _   __     _    __
+ | | / /__  (_)__/ /
+ | |/ / _ \/ / _  / 
+ |___/\___/_/\_,_/  v14 """)
  print("\033[0m[\033[1;34mINFO\033[0m] Loaded")
  main()
 banner()
