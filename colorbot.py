@@ -7,6 +7,7 @@ import pygame
 import os
 import time
 import customtkinter as ctk
+import threading
 
 pygame.init()
 axis = pygame.joystick.Joystick(0)
@@ -37,6 +38,7 @@ try:
  print("\033[1;36m[\033[1;33m\033[0;36m4\033[0m] 224x224")
  print("\033[1;36m[\033[1;33m\033[0;36m5\033[0m] 192x192")
  print("\033[1;36m[\033[1;33m\033[0;36m6\033[0m] 356x356")
+ print("\033[1;36m[\033[1;33m\033[0;36m7\033[0m] 112x112")
 
  res = input("\nPick A Res >> ")
  
@@ -50,8 +52,10 @@ try:
     CAPTURE_SIZE = 224
  if res == "5":
     CAPTURE_SIZE = 192
- if res == "3":
+ if res == "6":
     CAPTURE_SIZE = 356
+ if res == "7":
+    CAPTURE_SIZE = 112 
 
 
  FULL_CENTER_X = 960
@@ -73,8 +77,36 @@ try:
     output_color="BGR",
     region=REGION
 )
+ print("\nThe Higher The Strength The Slower But Way Less False Positives, The Lower More Speed But More False Positives \n")
+ print("\033[1;33m[1]\033[1;36m 0.4")
+ print("\033[1;33m[2]\033[1;36m 0.45")
+ print("\033[1;33m[3]\033[1;36m 0.5")
+ print("\033[1;33m[4]\033[1;36m 0.55")
+ print("\033[1;33m[5]\033[1;36m 0.6")
+ print("\033[1;33m[6]\033[1;36m 0.65")
+ print("\033[1;33m[7]\033[1;36m 0.7")
+ print("\033[1;33m[8]\033[1;36m 0.75")
+ print("\033[1;33m[9]\033[1;36m 0.8")
  
-
+ value = input("\n\033[0mFilter >> ")
+ if value == "1":
+    value=0.4
+ if value == "2":
+    value=0.45
+ if value == "3":
+    value=0.5
+ if value == "4":
+    value=0.55
+ if value == "5":
+    value=0.6
+ if value == "6":
+    value=0.65
+ if value == "7":
+    value=0.7
+ if value == "8":
+    value=0.75
+ if value == "9":
+    value=0.8
 
  class PersonDetector:
     def __init__(self, model_path):
@@ -84,33 +116,6 @@ try:
     @torch.inference_mode()
     def detect_person(self, img):
         img = np.ascontiguousarray(img)
-        
-        value = 0.1
-        ctk.set_default_color_theme("green")
-        ctk.set_appearance_mode("dark")
-
-        app = ctk.CTk()
-        app.geometry("500x160")
-        app.title("void")
-
-        text = ctk.CTkLabel(app, text=f"Strength & Also The Higher The More False Positives It Blocks Out")
-        text.pack(pady=5)
-
-        label = ctk.CTkLabel(app, text=f"{value}")
-
-        label.pack(pady=10)
-        def callme(c):
-         global value
-         value = float(c)
-         label.configure(text=f"{value}")
-           
-        slider = ctk.CTkSlider(app, from_=0.4, to=1, command=callme)
-        slider.set(value)
-
-        slider.pack(pady=20)
-
-        app.mainloop()
-        
         results = self.model(
             img,
             classes=[0],           
