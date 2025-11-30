@@ -6,8 +6,6 @@ import torch
 import pygame
 import os
 import time
-import customtkinter as ctk
-import threading
 
 pygame.init()
 axis = pygame.joystick.Joystick(0)
