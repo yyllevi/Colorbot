@@ -8,8 +8,6 @@ import os
 import time
 import customtkinter as ctk
 
-
-
 pygame.init()
 axis = pygame.joystick.Joystick(0)
 pygame.joystick.init()
