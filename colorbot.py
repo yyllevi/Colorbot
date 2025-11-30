@@ -21,15 +21,24 @@ try:
     torch.backends.cudnn.benchmark = True
 
  mouse_event = ctypes.windll.user32.mouse_event
- print("\nThe Lower The Res The Faster But Worse Close Range Less Screen Pixels Can't See")
- print("[1] 160x160")
- print("[2] 256x256")
- print("[3] 300x300")
- print("[4] 224x224")
- print("[5] 192x192")
- print("[6] 356x356")
+ 
+ print("""
+     \033[1;35m                   
+  _   __     _    __
+ | | / /__  (_)__/ /
+ | |/ / _ \/ / _  / 
+ |___/\___/_/\_,_/  v14 """)
+ print("\n \033[0m[\033[1;34mINFO\033[0m] Loaded")
+ 
+ print("\n The Lower The Res The Faster But Worse Close Range Less Screen Pixels Can't See\n")
+ print("\033[1;36m[\033[0;36m1\033[0m] 160x160")
+ print("\033[1;36m[\033[1;33m\033[0;36m2\033[0m] 256x256")
+ print("\033[1;36m[\033[1;33m\033[0;36m3\033[0m] 300x300")
+ print("\033[1;36m[\033[1;33m\033[0;36m4\033[0m] 224x224")
+ print("\033[1;36m[\033[1;33m\033[0;36m5\033[0m] 192x192")
+ print("\033[1;36m[\033[1;33m\033[0;36m6\033[0m] 356x356")
 
- res = input("Pick A Res")
+ res = input("\nPick A Res >> ")
  
  if res == "1":
     CAPTURE_SIZE = 160
@@ -91,7 +100,7 @@ try:
          value = float(c)
          label.configure(text=f"Strength & Also The Higher The More False Positives It Blocks Out {value}")
            
-        slider = ctk.CTkSlider(app, from_=0.1, to=1, command=callme)
+        slider = ctk.CTkSlider(app, from_=0.4, to=1, command=callme)
         slider.set(value)
 
         slider.pack(pady=20)
@@ -151,14 +160,4 @@ try:
 except Exception as file_err:
     print("Error Please Reinstall from the install.exe or Plug in controller")
 
-
-def banner():
- print("""
-     \033[1;35m                   
-  _   __     _    __
- | | / /__  (_)__/ /
- | |/ / _ \/ / _  / 
- |___/\___/_/\_,_/  v14 """)
- print("\033[0m[\033[1;34mINFO\033[0m] Loaded")
- main()
-banner
+main()
