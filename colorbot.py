@@ -24,7 +24,7 @@ try:
  FULL_CENTER_X = 960
  FULL_CENTER_Y = 540
 
- CAPTURE_SIZE = 160
+ CAPTURE_SIZE = 128
 
  REL_CENTER_X = CAPTURE_SIZE 
  REL_CENTER_Y = CAPTURE_SIZE 
@@ -56,7 +56,7 @@ try:
         results = self.model(
             img,
             classes=[0],           
-            conf=0.4,             
+            conf=0.55,             
             imgsz=CAPTURE_SIZE,    
             device=DEVICE,           
             verbose=False,
