@@ -24,7 +24,7 @@ try:
  FULL_CENTER_X = 960
  FULL_CENTER_Y = 540
 
- CAPTURE_SIZE = 160
+ CAPTURE_SIZE = 100
 
  REL_CENTER_X = CAPTURE_SIZE 
  REL_CENTER_Y = CAPTURE_SIZE 
@@ -114,7 +114,7 @@ def banner():
   _   __     _    __
  | | / /__  (_)__/ /
  | |/ / _ \/ / _  / 
- |___/\___/_/\_,_/  v14 """)
+ |___/\___/_/\_,_/  v15 """)
  print("\033[0m[\033[1;34mINFO\033[0m] Loaded")
  main()
 banner()
