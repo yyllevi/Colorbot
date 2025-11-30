@@ -90,7 +90,7 @@ try:
         ctk.set_appearance_mode("dark")
 
         app = ctk.CTk()
-        app.geometry("900x160")
+        app.geometry("500x160")
         app.title("void")
 
         text = ctk.CTkLabel(app, text=f"Strength & Also The Higher The More False Positives It Blocks Out")
