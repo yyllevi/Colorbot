@@ -22,12 +22,12 @@ try:
 
  mouse_event = ctypes.windll.user32.mouse_event
  
- print("160x160")
- print("256x256")
- print("300x300")
- print("224x224")
- print("192x192")
- print("356x356")
+ print("[1] 160x160")
+ print("[2] 256x256")
+ print("[3] 300x300")
+ print("[4] 224x224")
+ print("[5] 192x192")
+ print("[6] 356x356")
 
  res = input("Pick A Res")
  
