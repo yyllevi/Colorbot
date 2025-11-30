@@ -53,7 +53,7 @@ try:
  if res == "6":
     CAPTURE_SIZE = 356
  if res == "7":
-    CAPTURE_SIZE = 112 
+    CAPTURE_SIZE = 128
 
 
  FULL_CENTER_X = 960
