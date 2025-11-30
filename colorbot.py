@@ -30,7 +30,7 @@ try:
  |___/\___/_/\_,_/  v14 """)
  print("\n \033[0m[\033[1;34mINFO\033[0m] Loaded")
  
- print("\n The Lower The Res The Faster But Worse Close Range Less Screen Pixels Can't See\n")
+ print("\n The Lower The Res The Faster But Worse Close Range Less Screen Pixels Can't See & More False Positives On A Higher Res\n")
  print("\033[1;36m[\033[0;36m1\033[0m] 160x160")
  print("\033[1;36m[\033[1;33m\033[0;36m2\033[0m] 256x256")
  print("\033[1;36m[\033[1;33m\033[0;36m3\033[0m] 300x300")
