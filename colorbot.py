@@ -119,7 +119,7 @@ try:
     return frame  
 
  def main():
-    detector = PersonDetector(r"C:\Users\levgo\runs\detect\train52\weights\best.pt")
+    detector = PersonDetector(r"C:\Program Files\v\best.pt")
 
     VERTICAL_AIM_FACTOR = 0.25  
 
