@@ -21,7 +21,7 @@ try:
     torch.backends.cudnn.benchmark = True
 
  mouse_event = ctypes.windll.user32.mouse_event
- 
+ print("\nThe Lower The Res The Faster But Worse Close Range Less Screen Pixels Can't See")
  print("[1] 160x160")
  print("[2] 256x256")
  print("[3] 300x300")
@@ -161,4 +161,4 @@ def banner():
  |___/\___/_/\_,_/  v14 """)
  print("\033[0m[\033[1;34mINFO\033[0m] Loaded")
  main()
-banner()
+banner
