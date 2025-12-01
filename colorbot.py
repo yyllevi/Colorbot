@@ -5,7 +5,6 @@ import ctypes
 import torch
 import pygame
 import os
-import time
 
 pygame.init()
 axis = pygame.joystick.Joystick(0)
@@ -20,16 +19,20 @@ try:
     torch.backends.cudnn.benchmark = True
 
  mouse_event = ctypes.windll.user32.mouse_event
- 
  print("""
      \033[1;35m                   
-  _   __     _    __
- | | / /__  (_)__/ /
- | |/ / _ \/ / _  / 
- |___/\___/_/\_,_/  v14 """)
- print("\n \033[0m[\033[1;34mINFO\033[0m] Loaded")
- 
- print("\n The Lower The Res The Faster But Worse Close Range Less Screen Pixels Can't See\n")
+ _    __      _     _______       ______                         
+| |  / /___  (_)___/ / ___/____  / __/ /__      ______ _________ 
+| | / / __ \\/ / __  /\\__ \\/ __ \\/ /_/ __/ | /| / / __ `/ ___/ _ \\
+| |/ / /_/ / / /_/ /___/ / /_/ / __/ /_ | |/ |/ / /_/ / /  /  __/
+|___/\\____/_/\\__,_//____/\\____/_/  \\__/ |__/|__/\\__,_/_/   \\___/ v15 """)
+ print("\n\033[0m[\033[1;34mINFO\033[0m] Loaded")
+ print("[\033[43m\033[95mJOIN DISCORD\033[0m] https://discord.gg/Mkntgqrx\n")
+ print("\n\033[1;37mCONTROLLER ONLY FOR NOW")
+ print("\033[1;37mApex Doens't Like Double Mouse Event")
+ print("\033[1;37mMaking Bypass Sometime\n")
+
+ print("\n[\033[45m\033[95mREAD\033[0m] The Lower The Res The Faster But Worse Close Range Less Screen Pixels Can't See**\n")
  print("\033[1;36m[\033[0;36m1\033[0m] 160x160")
  print("\033[1;36m[\033[1;33m\033[0;36m2\033[0m] 256x256")
  print("\033[1;36m[\033[1;33m\033[0;36m3\033[0m] 300x300")
@@ -75,7 +78,7 @@ try:
     output_color="BGR",
     region=REGION
 )
- print("\nThe Higher The Strength The Slower But Way Less False Positives, The Lower More Speed But More False Positives \n")
+ print("\n[\033[45m\033[95mREAD\033[0m] The Higher The Strength The Slower But Way Less False Positives, The Lower More Speed But More False Positives \n")
  print("\033[1;33m[1]\033[1;36m 0.4")
  print("\033[1;33m[2]\033[1;36m 0.45")
  print("\033[1;33m[3]\033[1;36m 0.5")
