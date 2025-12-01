@@ -32,8 +32,8 @@ try:
  print("\033[1;37mApex Doens't Like Double Mouse Event")
  print("\033[1;37mMaking Bypass Sometime\n")
 
- print("[x] Recommended \n[\033[45m\033[97mREAD\033[0m] The Lower The Res The Faster But Worse Close Range Less Screen Pixels Can't See**\n")
- print("\033[1;36m[\033[0;36m1\033[0m] 160x160")
+ print("\n[\033[45m\033[97mREAD\033[0m] The Lower The Res The Faster But Worse Close Range Less Screen Pixels Can't See**\n")
+ print("[x] Recommended \033[1;36m[\033[0;36m1\033[0m] 160x160")
  print("\033[1;36m[\033[1;33m\033[0;36m2\033[0m] 256x256")
  print("\033[1;36m[\033[1;33m\033[0;36m3\033[0m] 300x300")
  print("\033[1;36m[\033[1;33m\033[0;36m4\033[0m] 224x224")
