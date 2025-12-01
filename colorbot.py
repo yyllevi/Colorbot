@@ -27,12 +27,12 @@ try:
 | |/ / /_/ / / /_/ /___/ / /_/ / __/ /_ | |/ |/ / /_/ / /  /  __/
 |___/\\____/_/\\__,_//____/\\____/_/  \\__/ |__/|__/\\__,_/_/   \\___/ v15 """)
  print("\n\033[0m[\033[1;34mINFO\033[0m] Loaded")
- print("[\033[43m\033[95mJOIN DISCORD\033[0m] https://discord.gg/Mkntgqrx\n")
+ print("[\033[48;5;208m\033[97mJOIN DISCORD\033[0m] https://discord.gg/Mkntgqrx\n")
  print("\n\033[1;37mCONTROLLER ONLY FOR NOW")
  print("\033[1;37mApex Doens't Like Double Mouse Event")
  print("\033[1;37mMaking Bypass Sometime\n")
 
- print("\n[\033[45m\033[95mREAD\033[0m] The Lower The Res The Faster But Worse Close Range Less Screen Pixels Can't See**\n")
+ print("\n[\033[45m\033[97mREAD\033[0m] The Lower The Res The Faster But Worse Close Range Less Screen Pixels Can't See**\n")
  print("\033[1;36m[\033[0;36m1\033[0m] 160x160")
  print("\033[1;36m[\033[1;33m\033[0;36m2\033[0m] 256x256")
  print("\033[1;36m[\033[1;33m\033[0;36m3\033[0m] 300x300")
