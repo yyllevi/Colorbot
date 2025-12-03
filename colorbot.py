@@ -14,9 +14,7 @@ axis.init()
 os.system("cls")
 
 try:
- DEVICE = "cuda"  
- if DEVICE == "cuda":
-    torch.backends.cudnn.benchmark = True
+ pass
 
  mouse_event = ctypes.windll.user32.mouse_event
  print("""
@@ -122,7 +120,7 @@ try:
             classes=[0],           
             conf=value,           
             imgsz=CAPTURE_SIZE,    
-            device=DEVICE,           
+            device=0,           
             verbose=False,
             half=True
         )
@@ -138,7 +136,7 @@ try:
     return frame  
 
  def main():
-    detector = PersonDetector(r"C:\Program Files\v\best.pt")
+    detector = PersonDetector(r"C:\Program Files\v\best.onnx")
 
     VERTICAL_AIM_FACTOR = 0.25  
 
