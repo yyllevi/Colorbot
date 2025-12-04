@@ -136,7 +136,7 @@ try:
     return frame  
 
  def main():
-    detector = PersonDetector(r"C:\Program Files\v\best.onnx")
+    detector = PersonDetector(r"C:\Program Files\v\best.pt")
 
     VERTICAL_AIM_FACTOR = 0.25  
 
