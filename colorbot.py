@@ -151,7 +151,7 @@ try:
         
         pygame.event.pump()
         if axis.get_axis(4) > 0.0:
-         mouse_event(0x0001, int(dx * 2.3), int(dy * 2.3))
+         mouse_event(0x0001, int(dx * 1.8), int(dy * 1.8))
 
 except Exception as file_err:
     print("Error Please Reinstall from the install.exe or Plug in controller")
