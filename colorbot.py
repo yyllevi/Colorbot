@@ -100,7 +100,7 @@ try:
     def __init__(self, model_path):
         self.model = YOLO(model_path)
 
-
+    @torch.inference_mode()
     def detect_person(self, img):
         img = np.ascontiguousarray(img)
         results = self.model(
