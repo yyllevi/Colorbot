@@ -18,7 +18,7 @@ try:
 
  mouse_event = ctypes.windll.user32.mouse_event
  print("""
-     \033[1;35m v17 """)
+     \033[1;35m v18 """)
  print("\n\033[0m[\033[1;34mINFO\033[0m] Loaded")
 
  print("[x] Recommended \033[1;36m[\033[0;36m1\033[0m] 160x160")
@@ -101,7 +101,6 @@ try:
         self.model = YOLO(model_path)
 
 
-    @torch.inference_mode()
     def detect_person(self, img):
         img = np.ascontiguousarray(img)
         results = self.model(
