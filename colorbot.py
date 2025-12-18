@@ -111,6 +111,7 @@ try:
             imgsz=CAPTURE_SIZE,    
             device=0,           
             verbose=False,
+            half=True
         )
         if not results or not len(results[0].boxes):
             return []
