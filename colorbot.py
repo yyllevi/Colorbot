@@ -21,9 +21,6 @@ try:
      \033[1;35m v16 """)
  print("\n\033[0m[\033[1;34mINFO\033[0m] Loaded")
  print("[\033[48;5;208m\033[97mJOIN DISCORD\033[0m] https://discord.gg/Mkntgqrx\n")
- print("\n\033[1;37mCONTROLLER ONLY FOR NOW")
- print("\033[1;37mApex Doens't Like Double Mouse Event")
- print("\033[1;37mMaking Bypass Sometime\n")
 
  print("\n[\033[45m\033[97mREAD\033[0m] The Lower The Res The Faster But Worse Close Range Less Screen Pixels Can't See**\n")
  print("[x] Recommended \033[1;36m[\033[0;36m1\033[0m] 160x160")
