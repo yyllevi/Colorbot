@@ -28,7 +28,7 @@ try:
  print("\n[\033[45m\033[97mREAD\033[0m] The Lower The Res The Faster But Worse Close Range Less Screen Pixels Can't See**\n")
  print("[x] Recommended \033[1;36m[\033[0;36m1\033[0m] 160x160")
  print("\033[1;36m[\033[1;33m\033[0;36m2\033[0m] 256x256")
- print("\033[1;36m[\033[1;33m\033[0;36m3\033[0m] 300x300")
+ print("\033[1;36m[\033[1;33m\033[0;36m3\033[0m] 320x320")
  print("\033[1;36m[\033[1;33m\033[0;36m4\033[0m] 224x224")
  print("\033[1;36m[\033[1;33m\033[0;36m5\033[0m] 192x192")
  print("\033[1;36m[\033[1;33m\033[0;36m6\033[0m] 384x384")
@@ -41,7 +41,7 @@ try:
  if res == "2":
     CAPTURE_SIZE = 256
  if res == "3":
-    CAPTURE_SIZE = 300
+    CAPTURE_SIZE = 320
  if res == "4":
     CAPTURE_SIZE = 224
  if res == "5":
