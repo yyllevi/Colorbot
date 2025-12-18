@@ -20,9 +20,7 @@ try:
  print("""
      \033[1;35m v16 """)
  print("\n\033[0m[\033[1;34mINFO\033[0m] Loaded")
- print("[\033[48;5;208m\033[97mJOIN DISCORD\033[0m] https://discord.gg/Mkntgqrx\n")
 
- print("\n[\033[45m\033[97mREAD\033[0m] The Lower The Res The Faster But Worse Close Range Less Screen Pixels Can't See**\n")
  print("[x] Recommended \033[1;36m[\033[0;36m1\033[0m] 160x160")
  print("\033[1;36m[\033[1;33m\033[0;36m2\033[0m] 256x256")
  print("\033[1;36m[\033[1;33m\033[0;36m3\033[0m] 320x320")
@@ -68,7 +66,6 @@ try:
     output_color="BGR",
     region=REGION
 )
- print("\n[\033[45m\033[95mREAD\033[0m] The Higher The Strength The Slower But Way Less False Positives, The Lower More Speed But More False Positives \n")
  print("[x] Recommended \033[1;33m[1]\033[1;36m 0.4")
  print("\033[1;33m[2]\033[1;36m 0.45")
  print("\033[1;33m[3]\033[1;36m 0.5")
@@ -104,6 +101,7 @@ try:
         self.model = YOLO(model_path)
 
 
+    @torch.inference_mode()
     def detect_person(self, img):
         img = np.ascontiguousarray(img)
         results = self.model(
