@@ -18,7 +18,7 @@ try:
 
  mouse_event = ctypes.windll.user32.mouse_event
  print("""
-     \033[1;35m v23 """)
+     \033[1;35m v24 """)
  print("\n\033[0m[\033[1;34mINFO\033[0m] Loaded")
 
  print("\033[1;36m[\033[0;36m1\033[0m] 160x160")
@@ -151,7 +151,7 @@ try:
         
         pygame.event.pump()
         if axis.get_axis(4) > 0.0:
-         mouse_event(0x0001, int(dx * 2), int(dy * 2))
+         mouse_event(0x0001, int(dx * 2.3), int(dy * 2.3))
 
 except Exception as file_err:
     print("Error Please Reinstall from the install.exe or Plug in controller")
