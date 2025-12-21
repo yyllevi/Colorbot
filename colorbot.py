@@ -19,7 +19,7 @@ root = ctk.CTk()
 root.geometry("994x557")
 root.title("void")
 root.resizable(False, False)
-bg_image = Image.open(r"k.png")  
+bg_image = Image.open(r"C:\\Program Files\\v\\ve.png")  
 bg_image = bg_image.resize((994, 557))   
 bg_photo = ImageTk.PhotoImage(bg_image)
 
@@ -31,7 +31,7 @@ bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 def verify_files():
     os.system('start "" "C:\\Program Files\\v\\update.exe"')
 
-button = ctk.CTkButton(root, text="Update",
+button = ctk.CTkButton(root, text="Verify Files",
                        fg_color="#000000",
                        hover_color="#4C00C5",
                        border_color="#FFFFFF",
