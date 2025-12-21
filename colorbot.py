@@ -16,11 +16,11 @@ if not c:
 
 
 root = ctk.CTk()
-root.geometry("991x557")
+root.geometry("994x557")
 root.title("void")
 root.resizable(False, False)
-bg_image = Image.open(r"C:\Program Files\v\ve.png")  
-bg_image = bg_image.resize((991, 557))   
+bg_image = Image.open(r"he.png")  
+bg_image = bg_image.resize((994, 557))   
 bg_photo = ImageTk.PhotoImage(bg_image)
 
 # Create a label with the image
@@ -39,10 +39,11 @@ button = ctk.CTkButton(root, text="Verify Files",
                        font=("Arial",15),
                        command=verify_files,
                        width=110
+                       
                        )
 
 
-button.place(x=26, y=88)
+button.place(x=30, y=88)
 conf_value = ctk.DoubleVar(value=0.4)
 
 value1 = ctk.CTkRadioButton(root,text="0.4 Confidence", variable=conf_value, value=0.4,hover_color="#FFFFFF", font=("Arial",50), bg_color="#000000", text_color="#FFFFFF",fg_color="#6F00FF")
