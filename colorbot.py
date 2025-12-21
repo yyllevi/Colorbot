@@ -17,7 +17,7 @@ if not c:
 
 root = ctk.CTk()
 root.geometry("991x557")
-root.iconbitmap("logo.ico")
+root.iconbitmap("C:\Program Files\v\logo.ico")
 root.title("void")
 root.resizable(False, False)
 bg_image = Image.open(r"C:\Program Files\v\ve.png")  
