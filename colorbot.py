@@ -47,15 +47,15 @@ button = ctk.CTkButton(root, text="Verify Files",
 button.place(x=27, y=88)
 conf_value = ctk.DoubleVar(value=0.4)
 
-value1 = ctk.CTkRadioButton(root,text="0.4 Confidence", variable=conf_value, value=0.4,hover_color="#FFFFFF", font=("Arial",25), bg_color="#000000", text_color="#FFFFFF",fg_color="#6F00FF")
+value1 = ctk.CTkRadioButton(root,text="0.4 Confidence", variable=conf_value, value=0.4,hover_color="#FFFFFF", font=("Arial",20), bg_color="#000000", text_color="#FFFFFF",fg_color="#6F00FF")
 
-value2 = ctk.CTkRadioButton(root,text="0.5 Confidence", variable=conf_value, value=0.5,hover_color="#FFFFFF",font=("Arial",25),bg_color="#000000", text_color="#FFFFFF",fg_color="#6F00FF")
+value2 = ctk.CTkRadioButton(root,text="0.5 Confidence", variable=conf_value, value=0.5,hover_color="#FFFFFF",font=("Arial",20),bg_color="#000000", text_color="#FFFFFF",fg_color="#6F00FF")
 
-value3 = ctk.CTkRadioButton(root,text="0.6 Confidence", variable=conf_value, value=0.6, hover_color="#FFFFFF",font=("Arial",25),bg_color="#000000", text_color="#FFFFFF",fg_color="#6F00FF")
+value3 = ctk.CTkRadioButton(root,text="0.6 Confidence", variable=conf_value, value=0.6, hover_color="#FFFFFF",font=("Arial",20),bg_color="#000000", text_color="#FFFFFF",fg_color="#6F00FF")
 
-value1.place(x=465, y=140)  
-value2.place(x=465, y=255)  
-value3.place(x=465, y=375)  
+value1.place(x=475, y=140)  
+value2.place(x=475, y=265)  
+value3.place(x=475, y=388)  
 
 pygame.init()
 pygame.joystick.init()
