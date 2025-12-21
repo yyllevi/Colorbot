@@ -17,7 +17,6 @@ if not c:
 
 root = ctk.CTk()
 root.geometry("991x557")
-root.iconbitmap(r"C:\Program Files\v\logo.ico")
 root.title("void")
 root.resizable(False, False)
 bg_image = Image.open(r"C:\Program Files\v\ve.png")  
@@ -30,7 +29,7 @@ bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 # Add widgets on top
 def verify_files():
-    os.system("update.exe")
+    os.system(r"C:\Program Files\v\update.exe")
 
 button = ctk.CTkButton(root, text="Verify Files",
                        fg_color="#000000",
@@ -129,5 +128,6 @@ def main():
         if axis.get_axis(4) > 0.0:
             mouse_event(0x0001, dx * 3, dy * 3)
 threading.Thread(target=main, daemon=True).start()
+root.iconbitmap(r"C:\Program Files\v\logo.ico")
 root.mainloop()
 
