@@ -44,7 +44,7 @@ button = ctk.CTkButton(root, text="Verify Files",
                        )
 
 
-button.place(x=27, y=88)
+button.place(x=29, y=87)
 conf_value = ctk.DoubleVar(value=0.4)
 
 value1 = ctk.CTkRadioButton(root,text="0.4 Confidence", variable=conf_value, value=0.4,hover_color="#FFFFFF", font=("Arial",20), bg_color="#000000", text_color="#FFFFFF",fg_color="#6F00FF")
