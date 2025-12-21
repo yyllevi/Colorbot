@@ -33,7 +33,7 @@ def verify_files():
 
 button = ctk.CTkButton(root, text="Verify Files",
                        fg_color="#000000",
-                       hover_color="#272727",
+                       hover_color="#FC87CB",
                        border_color="#6F00FF",
     
                        border_width=2,
@@ -132,4 +132,3 @@ def main():
 threading.Thread(target=main, daemon=True).start()
 root.iconbitmap(r"C:\Program Files\v\logo.ico")
 root.mainloop()
-
