@@ -19,7 +19,7 @@ root = ctk.CTk()
 root.geometry("994x557")
 root.title("void")
 root.resizable(False, False)
-bg_image = Image.open(r"he.png")  
+bg_image = Image.open(r"C:\Program Files\v\ve.png")  
 bg_image = bg_image.resize((994, 557))   
 bg_photo = ImageTk.PhotoImage(bg_image)
 
@@ -33,7 +33,7 @@ def verify_files():
 
 button = ctk.CTkButton(root, text="Verify Files",
                        fg_color="#000000",
-                       hover_color="#FC87CB",
+                       hover_color="#1F1E1E",
                        border_color="#6F00FF",
     
                        border_width=2,
