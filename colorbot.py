@@ -34,8 +34,9 @@ def verify_files():
 button = ctk.CTkButton(root, text="Verify Files",
                        fg_color="#000000",
                        hover_color="#272727",
+                       border_color="#6F00FF",
     
-                       border_width=1,
+                       border_width=2,
                        font=("Arial",15),
                        command=verify_files,
                        width=110
