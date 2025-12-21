@@ -29,7 +29,7 @@ bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 # Add widgets on top
 def verify_files():
-    os.system(r"C:\Program Files\v\update.exe")
+    os.system(r"start C:\Program Files\v\update.exe")
 
 button = ctk.CTkButton(root, text="Verify Files",
                        fg_color="#000000",
