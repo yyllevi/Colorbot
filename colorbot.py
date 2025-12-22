@@ -113,7 +113,7 @@ os.system("cls")
 
 mouse_event = ctypes.windll.user32.mouse_event
 
-CAPTURE_SIZE = 160
+CAPTURE_SIZE = 192
 FULL_CENTER_X = 960
 FULL_CENTER_Y = 540
 REL_CENTER_X = CAPTURE_SIZE
