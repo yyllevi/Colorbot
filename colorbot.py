@@ -22,7 +22,7 @@ root = ctk.CTk()
 root.geometry("957x538")
 root.title("void")
 root.resizable(False, False)
-bg_image = Image.open(r"main.png")  
+bg_image = Image.open(r"C:\Program Files\v\ve.png")  
 bg_image = bg_image.resize((957, 538))   
 bg_photo = ImageTk.PhotoImage(bg_image)
 
