@@ -142,7 +142,6 @@ def main():
         if ca != ai:
          ca = ai
          model = YOLO(rf"{ca}")
-         print(ca)
 
         frame = CAMERA.grab()
         if frame is None or frame.size == 0:
