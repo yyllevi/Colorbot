@@ -22,13 +22,14 @@ root = ctk.CTk()
 root.geometry("957x538")
 root.title("void")
 root.resizable(False, False)
-bg_image = Image.open(r"C:\Program Files\v\ve.png")  
+bg_image = Image.open(r"C:\\Program Files\\v\\ve.png")  
 bg_image = bg_image.resize((957, 538))   
 bg_photo = ImageTk.PhotoImage(bg_image)
 
 # Create a label with the image
 bg_label = ctk.CTkLabel(root, image=bg_photo, text="")
 bg_label.place(x=0, y=0, relwidth=1, relheight=1) 
+
 
 def openai():
     fp = filedialog.askopenfilename(title="open ai custom .pt file", filetypes=[("",".pt")])
@@ -103,6 +104,20 @@ value3 = ctk.CTkRadioButton(root,text="0.6 Confidence", variable=conf_value, val
 value1.place(x=470, y=137)  
 value2.place(x=470, y=257)  
 value3.place(x=470, y=377)  
+
+check_ai = ctk.CTkLabel(root, text="", fg_color="#000000", font=("arial", 17))
+
+def own():
+ cha = r"C:\Program Files\v\best.pt"
+ if ai == cha:
+    check_ai.configure(text="Using Default Ai")
+    check_ai.place(x=15, y=205)
+ else:
+    check_ai.configure(text="Using Custom Ai")
+    check_ai.place(x=15, y=205)
+ root.after(100,own)
+own()
+
 
 pygame.init()
 pygame.joystick.init()
