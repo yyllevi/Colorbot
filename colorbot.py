@@ -74,7 +74,7 @@ default.place(x=20, y=144)
 button.place(x=22, y=85)
 
 icon = ctk.CTkImage(
-    Image.open("folder.png"),
+    Image.open("C:\Program Files\v\folder.png"),
     size=(18, 20)
 )
 
