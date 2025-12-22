@@ -7,7 +7,10 @@ import pygame
 import os
 import customtkinter as ctk
 from PIL import Image, ImageTk
+from tkinter import filedialog
 import threading
+import time
+
 verify = r"C:\Program Files\v\ve.png"
 c = os.path.exists(verify)
 if not c:
@@ -16,20 +19,33 @@ if not c:
 
 
 root = ctk.CTk()
-root.geometry("994x557")
+root.geometry("957x538")
 root.title("void")
 root.resizable(False, False)
-bg_image = Image.open(r"C:\\Program Files\\v\\ve.png")  
-bg_image = bg_image.resize((994, 557))   
+bg_image = Image.open(r"main.png")  
+bg_image = bg_image.resize((957, 538))   
 bg_photo = ImageTk.PhotoImage(bg_image)
 
 # Create a label with the image
 bg_label = ctk.CTkLabel(root, image=bg_photo, text="")
 bg_label.place(x=0, y=0, relwidth=1, relheight=1) 
 
-# Add widgets on top
+def openai():
+    fp = filedialog.askopenfilename(title="open ai custom .pt file")
+    if fp:
+        global ai
+        ai = fp
+
+
 def verify_files():
     os.system('start "" "C:\\Program Files\\v\\update.exe"')
+    time.sleep(2)
+    exit()
+def default_ai():   
+    global ai
+    ai = r"C:\Program Files\v\best.pt"
+
+default_ai()
 
 button = ctk.CTkButton(root, text="Verify Files",
                        fg_color="#000000",
@@ -39,12 +55,43 @@ button = ctk.CTkButton(root, text="Verify Files",
                        border_width=2,
                        font=("Arial",15),
                        command=verify_files,
-                       width=110
+                       width=110                  
+                       )
+default = ctk.CTkButton(root, text="Use default ai",
+                       fg_color="#000000",
+                       hover_color="#B08CD1",
+                       border_color="#FFFFFF",
+                       command=default_ai,
+                       border_width=2,
+                       font=("Arial",15),
+                       width=115,
+                       height=30
+                       
                        
                        )
 
+default.place(x=20, y=144)
+button.place(x=22, y=85)
 
-button.place(x=29, y=87)
+icon = ctk.CTkImage(
+    Image.open("folder.png"),
+    size=(18, 20)
+)
+
+files = ctk.CTkButton(
+    bg_label,          
+    text="",
+    image=icon,
+    fg_color="#000000",
+    hover_color="#000000",
+    command=openai,
+    border_width=0,
+    width=18,
+    height=20,
+)
+
+files.place(x=8, y=498)
+
 conf_value = ctk.DoubleVar(value=0.4)
 
 value1 = ctk.CTkRadioButton(root,text="0.4 Confidence", variable=conf_value, value=0.4,hover_color="#FFFFFF", font=("Arial",20), bg_color="#000000", text_color="#FFFFFF",fg_color="#6F00FF")
@@ -53,9 +100,9 @@ value2 = ctk.CTkRadioButton(root,text="0.5 Confidence", variable=conf_value, val
 
 value3 = ctk.CTkRadioButton(root,text="0.6 Confidence", variable=conf_value, value=0.6, hover_color="#FFFFFF",font=("Arial",20),bg_color="#000000", text_color="#FFFFFF",fg_color="#6F00FF")
 
-value1.place(x=475, y=140)  
-value2.place(x=475, y=265)  
-value3.place(x=475, y=388)  
+value1.place(x=470, y=137)  
+value2.place(x=470, y=257)  
+value3.place(x=470, y=377)  
 
 pygame.init()
 pygame.joystick.init()
@@ -86,13 +133,17 @@ CAMERA = bettercam.create(
     region=REGION
 )
 
-# ------------------- MAIN FUNCTION -------------------
+
 def main():
-    # Load YOLO model
-    model = YOLO(r"C:\Program Files\v\best.pt")
+    ca = ai
+    model = YOLO(rf"{ca}")
 
     while True:
-        # Grab frame
+        if ca != ai:
+         ca = ai
+         model = YOLO(rf"{ca}")
+         print(ca)
+
         frame = CAMERA.grab()
         if frame is None or frame.size == 0:
             continue
