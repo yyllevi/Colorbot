@@ -26,13 +26,12 @@ bg_image = Image.open(r"C:\\Program Files\\v\\ve.png")
 bg_image = bg_image.resize((957, 538))   
 bg_photo = ImageTk.PhotoImage(bg_image)
 
-# Create a label with the image
 bg_label = ctk.CTkLabel(root, image=bg_photo, text="")
 bg_label.place(x=0, y=0, relwidth=1, relheight=1) 
 
 
 def openai():
-    fp = filedialog.askopenfilename(title="open ai custom .pt file", filetypes=[("",".engine")])
+    fp = filedialog.askopenfilename(title="open ai custom .pt file", filetypes=[("",".onnx")])
     if fp:
         global ai
         ai = fp 
