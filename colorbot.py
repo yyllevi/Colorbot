@@ -108,7 +108,7 @@ value3.place(x=470, y=377)
 check_ai = ctk.CTkLabel(root, text="", fg_color="#000000", font=("arial", 17))
 
 def own():
- cha = r"C:\Program Files\v\best.pt"
+ cha = r"C:\Program Files\v\best.engine"
  if ai == cha:
     check_ai.configure(text="Using Default Ai")
     check_ai.place(x=15, y=205)
