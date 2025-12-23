@@ -93,7 +93,7 @@ files = ctk.CTkButton(
 
 files.place(x=8, y=498)
 
-conf_value = ctk.DoubleVar(value=0.4)
+conf_value = ctk.DoubleVar(value=0.3)
 
 value1 = ctk.CTkRadioButton(root,text="0.3 Confidence", variable=conf_value, value=0.3,hover_color="#FFFFFF", font=("Arial",20), bg_color="#000000", text_color="#FFFFFF",fg_color="#6F00FF")
 
