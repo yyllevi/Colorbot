@@ -170,7 +170,6 @@ def main():
                 device=0,
                 verbose=False,
                 half=True,
-                max_det=1  # Changed from 1 to allow multiple detections
             )
 
         if not results or not len(results[0].boxes):
