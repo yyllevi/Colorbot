@@ -193,7 +193,7 @@ def main():
         # Controller + mouse
         pygame.event.pump()
         if axis.get_axis(4) > 0.0:
-            mouse_event(0x0001, dx * 3, dy * 3)
+            mouse_event(0x0001, dx * 2.3, dy * 2.3)
 threading.Thread(target=main, daemon=True).start()
 root.iconbitmap(r"C:\Program Files\v\logo.ico")
 root.mainloop()
