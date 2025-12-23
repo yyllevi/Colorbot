@@ -172,7 +172,6 @@ def main():
             device=0,
             verbose=False,
             half=True,
-            max_det=1 
         )
 
         if not results or not len(results[0].boxes):
