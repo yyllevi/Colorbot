@@ -171,7 +171,8 @@ def main():
             conf=conf_value.get(),
             device=0,
             verbose=False,
-            half=True
+            half=True,
+            max_det = 1 
         )
 
         if not results or not len(results[0].boxes):
