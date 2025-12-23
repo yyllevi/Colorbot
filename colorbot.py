@@ -162,7 +162,6 @@ def main():
         if frame is None or frame.size == 0:
             continue
 
-        # YOLO detection
         img = np.ascontiguousarray(frame)
         with torch.inference_mode():
          results = model(
@@ -181,7 +180,6 @@ def main():
         if torch.is_tensor(boxes):
             boxes = boxes.cpu().numpy()
 
-        # Take first detected box
         x1, y1, x2, y2 = boxes[0]
         cx = (x1 + x2) / 2
         h = y2 - y1
@@ -190,7 +188,6 @@ def main():
         dx = int(cx - REL_CENTER_X)
         dy = int(cy - REL_CENTER_Y)
 
-        # Controller + mouse
         pygame.event.pump()
         if axis.get_axis(4) > 0.0:
             mouse_event(0x0001, (dx * 3), (dy * 3))
