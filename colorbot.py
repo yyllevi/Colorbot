@@ -44,7 +44,7 @@ def verify_files():
     exit()
 def default_ai():   
     global ai
-    ai = r"C:\Program Files\v\best.pt"
+    ai = r"C:\Program Files\v\best.engine"
 
 default_ai()
 
