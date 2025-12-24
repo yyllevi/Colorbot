@@ -31,7 +31,7 @@ bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 
 def openai():
-    fp = filedialog.askopenfilename(title="open ai custom .pt file", filetypes=[("",".onnx")])
+    fp = filedialog.askopenfilename(title="open ai custom .pt file", filetypes=[("",".engine")])
     if fp:
         global ai
         ai = fp 
