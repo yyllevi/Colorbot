@@ -22,7 +22,7 @@ root = ctk.CTk()
 root.geometry("957x538")
 root.title("void")
 root.resizable(False, False)
-bg_image = Image.open(r"gui.png")  
+bg_image = Image.open(r"C:\\Program Files\\v\\gui.png")  
 bg_image = bg_image.resize((957, 538))   
 bg_photo = ImageTk.PhotoImage(bg_image)
 
@@ -98,7 +98,7 @@ files = ctk.CTkButton(
 files.place(x=16, y=495)
 
 ico = ctk.CTkImage(
-    Image.open(r"save.png"),
+    Image.open(r"C:\\Program Files\\v\\save.png"),
     size=(18, 20)
 )
 
