@@ -22,7 +22,7 @@ root = ctk.CTk()
 root.geometry("957x538")
 root.title("void")
 root.resizable(False, False)
-bg_image = Image.open(r"C:\\Program Files\\v\\ve.png")  
+bg_image = Image.open(r"gui.png")  
 bg_image = bg_image.resize((957, 538))   
 bg_photo = ImageTk.PhotoImage(bg_image)
 
@@ -49,34 +49,38 @@ default_ai()
 
 button = ctk.CTkButton(root, text="Verify Files",
                        fg_color="#000000",
-                       hover_color="#4C00C5",
-                       border_color="#FFFFFF",
-    
-                       border_width=2,
-                       font=("Arial",15),
+                       bg_color="#000000",
+                       hover_color="#000000",
+                       font=("Arial",17),
                        command=verify_files,
-                       width=110                  
+                       width=70,     
+                                    
                        )
 default = ctk.CTkButton(root, text="Use default ai",
                        fg_color="#000000",
-                       hover_color="#B08CD1",
-                       border_color="#FFFFFF",
+                       hover_color="#000000",
                        command=default_ai,
-                       border_width=2,
+                       bg_color="#000000",
                        font=("Arial",15),
-                       width=115,
-                       height=30
+                       width=70,
                        
                        
-                       )
+                                             )
 
-default.place(x=20, y=144)
-button.place(x=22, y=85)
+
+
+
+button.place(x=26, y=74)
+
+default.place(x=23, y=147)
+
 
 icon = ctk.CTkImage(
     Image.open(r"C:\Program Files\v\folder.png"),
     size=(18, 20)
 )
+
+
 
 files = ctk.CTkButton(
     bg_label,          
@@ -86,34 +90,55 @@ files = ctk.CTkButton(
     hover_color="#000000",
     command=openai,
     border_width=0,
-    width=18,
+    corner_radius=1,
+    width=35,
     height=20,
 )
 
-files.place(x=8, y=498)
+files.place(x=16, y=495)
+
+ico = ctk.CTkImage(
+    Image.open(r"save.png"),
+    size=(18, 20)
+)
+
+save = ctk.CTkButton(
+    bg_label,          
+    text="",
+    image=ico,
+    fg_color="#000000",
+    hover_color="#000000",
+    command=openai,
+    border_width=0,
+    corner_radius=1,
+    width=30,
+    height=20,
+)
+
+save.place(x=907, y=495)
 
 conf_value = ctk.DoubleVar(value=0.3)
 
-value1 = ctk.CTkRadioButton(root,text="0.3 Confidence", variable=conf_value, value=0.3,hover_color="#FFFFFF", font=("Arial",20), bg_color="#000000", text_color="#FFFFFF",fg_color="#6F00FF")
+value1 = ctk.CTkRadioButton(root,text="", variable=conf_value, value=0.3,hover_color="#D400FF", font=("Arial",20), bg_color="#000000", text_color="#FFFFFF",fg_color="#3700FF", width=0)
 
-value2 = ctk.CTkRadioButton(root,text="0.4 Confidence", variable=conf_value, value=0.4,hover_color="#FFFFFF",font=("Arial",20),bg_color="#000000", text_color="#FFFFFF",fg_color="#6F00FF")
+value2 = ctk.CTkRadioButton(root,text="", variable=conf_value, value=0.4,hover_color="#D400FF",font=("Arial",20),bg_color="#000000", text_color="#FFFFFF",fg_color="#3700FF",width=0)
 
-value3 = ctk.CTkRadioButton(root,text="0.6 Confidence", variable=conf_value, value=0.6, hover_color="#FFFFFF",font=("Arial",20),bg_color="#000000", text_color="#FFFFFF",fg_color="#6F00FF")
+value3 = ctk.CTkRadioButton(root,text="", variable=conf_value, value=0.6, hover_color="#D400FF",font=("Arial",20),bg_color="#000000", text_color="#FFFFFF",fg_color="#3700FF",width=0)
 
-value1.place(x=470, y=137)  
-value2.place(x=470, y=257)  
-value3.place(x=470, y=377)  
+value1.place(x=370, y=141)  
+value2.place(x=370, y=265)  
+value3.place(x=370, y=395)  
 
-check_ai = ctk.CTkLabel(root, text="", fg_color="#000000", font=("arial", 17))
+check_ai = ctk.CTkLabel(root, text="", fg_color="#000000", font=("arial", 15, "bold"), bg_color="#000000", text_color="#3700FF")
 
 def own():
  cha = r"C:\Program Files\v\best.engine"
  if ai == cha:
-    check_ai.configure(text="Using Default Ai")
-    check_ai.place(x=15, y=205)
+    check_ai.configure(text="Running default ai")
+    check_ai.place(x=15, y=215)
  else:
-    check_ai.configure(text="Using Custom Ai")
-    check_ai.place(x=15, y=205)
+    check_ai.configure(text="Running custom ai")
+    check_ai.place(x=15, y=215)
  root.after(100,own)
 own()
 
