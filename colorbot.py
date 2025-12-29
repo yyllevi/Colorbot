@@ -1,1 +1,1 @@
-print("Haven't Paid : (")
+print("Haven't Paid : ( 20$ aud")
